@@ -1,47 +1,45 @@
-.icon-menu {
-    display: none;
-    @media (max-width: $phone + px) {
-        display: block;
-        position: relative;
-        width: 28px;
-        height: 28px;
-        flex: 0 0 28px;
-        cursor: pointer;
-        margin-right: 17px;
-        z-index: 5;
-        span,
-        &::before,
-        &::after {
-            content: "";
-            @include transition;
-            position: absolute;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            border-radius: 10px;
-            background-color: #fff;
-        }
-        &::before {
-            top: 0;
-        }
-        &::after {
-            bottom: 0;
-        }
-        span {
-            top: calc(50% - 1px);
-        }
-        .menu--open & {
-            span {
-                transform: scale(0);
-            }
-            &::before {
-                transform: rotate(-45deg);
-                top: calc(50% - 1px);
-            }
-            &::before {
-                transform: rotate(45deg);
-                top: calc(50% - 1px);
-            }
-        }
+.header {
+  height: rem(189);
+  background: center rem(10) url(../../img/first-screen/clouds.svg) no-repeat;
+  // .header__container
+  &__container {
+    display: flex;
+  }
+  // .header__logo
+  &__logo {
+    margin-top: rem(29);
+  }
+  // .header__menu
+  &__menu {
+    font-weight: 600;
+    margin-top: rem(47);
+    font-size: rem(13);
+    line-height: 1;
+    margin-right: rem(50);
+    flex: auto;
+  }
+  &__button {
+    display: flex;
+    align-items: center;
+    gap: em(13, 16);
+    padding: em(19, 16) em(30, 16) em(19, 16) em(34, 16);
+    font-size: rem(16);
+    line-height: math.div(22, 16);
+    font-weight: 400;
+    margin-top: rem(30);
+  }
+}
+.menu {
+  display: flex;
+  justify-content: flex-end;
+  gap: rem(32);
+  // .menu__item
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: rem(10);
+    &::before {
+      color: $mainPink;
     }
+  }
 }
