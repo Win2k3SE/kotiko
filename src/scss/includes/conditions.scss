@@ -3,15 +3,18 @@
    &__container {
       padding-top: rem(150);
       position: relative;
-      &::before {
-         content: "";
-         background: 0 0 url(../../img/conditions/conditions-bg.svg) no-repeat;
-         position: absolute;
-         top: rem(48);
-         left: rem(-97);
-         width: 100%;
-         height: 100%;
-         z-index: -1;
+      @media (min-width: 992px) {
+         &::before {
+            content: "";
+            background: 0 0 url(../../img/conditions/conditions-bg.svg)
+               no-repeat;
+            position: absolute;
+            top: rem(48);
+            left: rem(-97);
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+         }
       }
    }
    // .conditions__title
