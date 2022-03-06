@@ -1,22 +1,49 @@
 .header {
   height: rem(189);
   background: center rem(10) url(../../img/first-screen/clouds.svg) no-repeat;
+  @media (max-width: 1000px) {
+    height: auto;
+  }
   // .header__container
   &__container {
     display: flex;
+    display: grid;
+    grid-template: "logo list button" auto / auto 1fr auto;
+    @media (max-width: 1000px) {
+      grid-template:
+        "logo button"
+        "list list";
+      justify-content: space-between;
+    }
+    @media (max-width: 600px) {
+      grid-template:
+        "logo "
+        "list"
+        "button";
+      justify-items: center;
+      justify-content: center;
+    }
   }
   // .header__logo
   &__logo {
     margin-top: rem(29);
+    grid-area: logo;
   }
   // .header__menu
   &__menu {
     font-weight: 600;
-    margin-top: rem(47);
+    padding-top: rem(47);
     font-size: rem(13);
     line-height: 1;
     margin-right: rem(50);
     flex: auto;
+    grid-area: list;
+    justify-self: end;
+    @media (max-width: 1000px) {
+      justify-self: center;
+      padding: rem(20) 0;
+      margin-right: 0;
+    }
   }
   &__button {
     display: flex;
@@ -27,12 +54,25 @@
     line-height: math.div(22, 16);
     font-weight: 400;
     margin-top: rem(30);
+    grid-area: button;
+    justify-self: end;
+    @media (max-width: 650px) {
+      justify-self: center;
+    }
   }
 }
 .menu {
   display: flex;
   justify-content: flex-end;
   gap: rem(32);
+  @media (max-width: 550px) {
+    display: grid;
+    grid-template: repeat(3, auto) / auto;
+    justify-items: center;
+    row-gap: rem(24);
+    margin: rem(30) 0;
+    padding: 0;
+  }
   // .menu__item
   &__item {
     display: flex;
@@ -40,6 +80,14 @@
     gap: rem(10);
     &::before {
       color: $mainPink;
+    }
+    @media (max-width: 550px) {
+      padding: 0 30px;
+      flex-direction: column;
+      row-gap: rem(10);
+      &::before {
+        font-size: rem(18);
+      }
     }
   }
 }

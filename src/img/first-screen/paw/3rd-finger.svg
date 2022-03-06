@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="107.56104"
+   height="133.36983"
+   viewBox="0 0 107.56104 133.36983"
+   fill="none"
+   version="1.1"
+   id="svg246"
+   sodipodi:docname="3rd-finger.svg"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs250" />
+  <sodipodi:namedview
+     id="namedview248"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="1.9366755"
+     inkscape:cx="190.27452"
+     inkscape:cy="24.526567"
+     inkscape:window-width="1280"
+     inkscape:window-height="961"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg246" />
+  <!-- 3rd finger -->
+  <path
+     fill-rule="evenodd"
+     clip-rule="evenodd"
+     d="m 57.859525,133.31063 c -25.377,1.537 -55.4720004,-27.046 -57.72500037,-63.842902 C -2.1184754,32.671728 24.324525,1.5959878 49.701525,0.05923178 75.078525,-1.4782922 105.17352,27.105028 107.42652,63.901928 c 2.253,36.795702 -24.189995,67.871702 -49.566995,69.408702 z"
+     fill="#28afc9"
+     id="path244" />
+</svg>

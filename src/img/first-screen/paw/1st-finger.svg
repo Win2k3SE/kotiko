@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="108"
+   height="129"
+   viewBox="0 0 108 129"
+   fill="none"
+   version="1.1"
+   id="svg63"
+   sodipodi:docname="1st-finger.svg"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs67" />
+  <sodipodi:namedview
+     id="namedview65"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="1.9366755"
+     inkscape:cx="190.27452"
+     inkscape:cy="65.834469"
+     inkscape:window-width="1280"
+     inkscape:window-height="961"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg63" />
+  <!-- 1st finger -->
+  <path
+     fill-rule="evenodd"
+     clip-rule="evenodd"
+     d="m 99.6081,40.719529 c 15.4509,33.485 5.9299,73.535001 -17.1642,84.144001 -23.094,10.61 -59.9571,-3.338 -75.4087402,-36.823001 C -8.4165,54.554529 3.39527,14.211529 26.4893,3.6015286 c 23.0939,-10.61 57.6672,3.6320004 73.1188,37.1180004 z"
+     fill="#28afc9"
+     id="path61" />
+</svg>

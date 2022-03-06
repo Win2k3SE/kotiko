@@ -1,0 +1,98 @@
+.conditions {
+    // .conditions__container
+    &__container {
+        padding-top: rem(150);
+    position: relative;
+        &::before {
+            content: '';
+            background: 0 0 url(../../img/conditions/conditions-bg.svg) no-repeat;
+            position: absolute;
+            top: rem(48);
+            left: rem(-97);
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+    }
+    // .conditions__title
+    &__title {
+    }
+    // .conditions__item
+    &__item {
+    }
+    // .contitions__header
+    &__header {
+        margin-bottom: rem(70);
+    }
+    // .contitions__list
+    &__list {
+    }
+}
+.consitions {
+    // .consitions__item
+    &__item {
+    }
+    // .contition__title
+    &__title {
+    }
+}
+.condition {
+    display: flex;
+    column-gap: rem(30);
+    border-top: 1px solid $mainPink;
+    padding: rem(30) 0;
+    // .condition__left-col
+    &__left-col {
+        flex: 0 0 calc(50% - rem(15));
+    }
+    // .condition__right-col
+    &__right-col {
+        flex: 0 0 calc(50% - rem(15));
+        align-self: end;
+    }
+    // .condition__list
+    &__list {
+    }
+    // .condition__list-item
+    &__list-item {
+        font-size: rem(18);
+        line-height: 1.4;
+        display: flex;
+        column-gap: rem(10);
+        align-items: center;
+        &:not(:last-child) {
+            margin-bottom: rem(15);
+        }
+        &::before {
+            content:'';
+            width: rem(10);
+            height: rem(10);
+            flex: 0 0 rem(10);
+            display: inline-block;
+            border-radius: 50%;
+            background-color: $mainPink;
+        }
+    }
+    // .condition__text
+    &__text {
+        p {
+            &:not(:last-child) {
+                margin-bottom: rem(15);
+            }
+        }
+    }
+    // .condition__title
+    &__title {
+        font-size: rem(26);
+        line-height: math.div(36, 26);
+        font-weight: 600;
+        margin-top: rem(10);
+        &:not(:last-child) {
+            margin-bottom: rem(30);
+        }
+    }
+    &__subtitle {
+        font-size: rem(20);
+        line-height: 1.5;
+    }
+}

@@ -4,12 +4,13 @@
 @import "common/reset";
 
 $fontFamily: Montserrat;
-$fontSize: 18;
+$fontSize: 16;
 $minFontSize: 16;
 $lineHeight: 22;
 $background: #fff;
 $mainTextColor: #242424;
 $mainPink: #f6a6bf;
+$mainGray: #848484;
 
 $minWidth: 320;
 $maxWidth: 1920;
@@ -31,7 +32,6 @@ body {
   font-family: $fontFamily;
   @include avalue("font-size", $fontSize, $minFontSize);
   line-height: math.div($lineHeight, $fontSize);
-  font-weight: 500;
   color: $mainTextColor;
   background-color: $background;
   &._lock {
