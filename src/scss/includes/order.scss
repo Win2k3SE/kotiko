@@ -1,25 +1,31 @@
 .order {
+   @include avalue("margin-top", 150, 100);
    // .order__container
    &__container {
+      @media (max-width: 480px) {
+         padding-left: 0;
+         padding-right: 0;
+      }
    }
    // .order__header
    &__header {
    }
    // .order__title
    &__title {
+      @media (max-width: 480px) {
+         margin-bottom: 0;
+         text-align: center;
+      }
    }
    // .order__body
    &__body {
       display: flex;
       column-gap: rem(44);
       position: relative;
-      @media (max-width: 992px) {
-         gap: 0;
-      }
-      @media (max-width: 767px) {
+      overflow: hidden;
+      @media (max-width: 480px) {
          flex-direction: column;
       }
-      //   flex-wrap: wrap;
    }
    // .order__image
    &__image {
@@ -32,7 +38,17 @@
       width: rem(625);
       height: 100%;
       @media (max-width: 992px) {
-         left: 0;
+         left: 50%;
+         top: 50%;
+         transform: translate(-50%, -50%) scale(1.2);
+      }
+      @media (max-width: 480px) {
+         position: static;
+         transform: none;
+         width: 100%;
+         height: 100%;
+         padding: 0 rem(10);
+         margin: rem(30) auto;
       }
       img {
          position: absolute;
@@ -40,37 +56,36 @@
          left: 0;
          width: 100%;
          height: 100%;
-         outline: 1px solid magenta;
-         @include amaxvalue("width", 625, 100, 992);
-         @include amaxvalue("height", 595, 100, 992);
-         @media (max-width: 992px) {
-            // width: 80%;
-            // height: 80%;
-         }
-         @media (max-width: 767px) {
-            // position: static;
-            // width: 70%;
-            // height: 70%;
+         @media (max-width: 480px) {
+            position: static;
          }
       }
    }
    // .order__form
    &__form {
-      flex: 0 0 pc(609, $maxWidthContainer);
+      //   flex: 0 0 pc(609, $maxWidthContainer);
       flex: 0 0 609px;
       margin-left: auto;
       position: relative;
+      @media (max-width: 992px) {
+         flex: 0 0 100%;
+      }
    }
 }
 .order-form {
    // .order-form__form
    &__form {
-      background-color: rgba(255, 254, 241, 0.9);
-      padding: rem(60) rem(50) rem(60) rem(60);
+      background-color: rgba(255, 254, 241, 0.97);
+      @include avalue("padding-top", 60, 20);
+      @include avalue("padding-right", 50, 10);
+      @include avalue("padding-bottom", 60, 20);
+      @include avalue("padding-left", 60, 10);
    }
    // .order-form__row
    &__row {
       display: flex;
+      flex-wrap: wrap;
+      row-gap: rem(39);
       input {
          flex: 0 0 100%;
       }
@@ -82,9 +97,11 @@
          input {
             flex: auto;
          }
+         @media (max-width: 609px) {
+         }
       }
       &--button {
-         margin-top: rem(70);
+         @include avalue("margin-top", 70, 50);
       }
    }
    // .order-form__input
@@ -94,5 +111,8 @@
    }
    &__button {
       width: rem(330);
+      @media (max-width: 609px) {
+         width: 100%;
+      }
    }
 }
