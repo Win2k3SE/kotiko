@@ -1,8 +1,9 @@
 import { addElements } from "./flexbox-empty-elements-inserter.js"
-import { getPropertyValue } from "./functions.js"
+import { getPropertyValue, slideUp, slideDown } from "./functions.js"
 
 let hidden = null
 const container = document.querySelector(".cctv-suits__suits")
+const additionalContainer = document.querySelector(".cctv-suits__additional-suits")
 const columnGap = getPropertyValue(container, "column-gap")
 const suits = container.querySelectorAll(".cctv-suits__suit")
 const showMoreButton = container.parentElement.querySelector(".cctv-suits__show-more")
@@ -14,6 +15,7 @@ const map = {
    2: "blue",
    3: "green",
 }
+
 export function elementsToShow() {
    let els = 0
    const arr = []
@@ -79,23 +81,29 @@ function showButton() {
 }
 function hideAndToggle() {
    if (hidden === true) {
-      show()
+      slideDown(additionalContainer, 300)
       showMoreButton.textContent = "Свернуть"
+      hidden = false
    } else {
-      hide()
+      slideUp(additionalContainer, 300)
       showMoreButton.textContent = "Смотреть еще"
+      hidden = true
    }
 }
 export function hideToggle() {
    if (document.documentElement.offsetWidth > 600) {
       if (hidden === null || hidden === true) {
-         show()
+         // show()
+         slideDown(additionalContainer, 300)
          hideButton()
+         hidden = false
       }
    } else {
       if (hidden === null || hidden === false) {
-         hide()
+         // hide()
+         slideUp(additionalContainer, 300)
          showButton()
+         hidden = true
       }
    }
 }

@@ -4,6 +4,10 @@ export function isWebp() {
 export function getPropertyValue(el, prop) {
    return parseInt(getComputedStyle(el)[prop])
 }
+const spoilerOpenClassName = "_spoiler--open"
+const spoilerIsSlidingClassName = "_spoiler--sliding"
+const spoilerIsInitClassName = "_spoiler--init"
+const DEFAULT_DURATION = 500
 export function slideUp(el, duration = DEFAULT_DURATION) {
    if (!el) return
    if (el.classList.contains(spoilerIsSlidingClassName)) return

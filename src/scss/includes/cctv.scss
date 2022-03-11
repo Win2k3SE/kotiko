@@ -27,6 +27,9 @@
    // .cctv__subtitle
    &__subtitle {
       flex: 0 0 pc($maxWidthContainer - 650, $maxWidthContainer);
+      &:not(:last-child) {
+         margin-bottom: rem(20);
+      }
       p {
          &:not(:last-child) {
             margin-bottom: em(12, 16);
@@ -44,8 +47,6 @@
    }
    // .cctv__text
    &__text {
-      //   flex: 0 3 pc(3 * 140 + 2 * 36, $maxWidthContainer);
-      flex: 0 0 3 * 140 + 2 * 36px;
       grid-column: span 3;
       font-size: rem(20);
       line-height: 1.5;
@@ -56,7 +57,7 @@
             margin-bottom: em(15, 20);
          }
       }
-      @media (max-width: 767px) {
+      @media (max-width: 660px) {
          font-size: rem(16);
          font-weight: 400;
          line-height: 1.4;
@@ -74,17 +75,38 @@
 }
 .cctv-suits {
    &__suits {
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      gap: rem(55) rem(36);
-      @media (max-width: 767px) {
-         justify-content: space-between;
-         gap: rem(25) rem(26);
-      }
       display: grid;
       grid-template-rows: auto;
       grid-template-columns: repeat(auto-fill, rem(140));
+      gap: rem(55) rem(36);
+      justify-content: space-between;
+      @media (max-width: 767px) {
+         gap: rem(25) rem(26);
+      }
+      @media (max-width: 660px) {
+         grid-template-columns: repeat(3, rem(140));
+         justify-content: space-around;
+      }
+      @media (max-width: 500px) {
+         grid-template-columns: repeat(3, rem(80));
+      }
+   }
+   &__additional-suits {
+      display: grid;
+      justify-content: space-between;
+      grid-template-columns: repeat(auto-fill, rem(140));
+      gap: rem(55) rem(36);
+      margin-top: rem(36);
+      @media (max-width: 660px) {
+         grid-template-columns: repeat(3, rem(140));
+         justify-content: space-around;
+      }
+      @media (max-width: 500px) {
+         grid-template-columns: repeat(3, rem(80));
+      }
+      &[hidden] {
+         display: none;
+      }
    }
    &__image-sprite {
       display: none;
@@ -105,17 +127,14 @@
       align-self: end;
       @media (any-hover: hover) {
          &:hover {
-            .suits__image {
-               opacity: 1;
-               fill: #f6a6bf;
-               transform: rotate(-45deg);
+            .cctv-suits__image {
                opacity: 1;
                fill: #f6a6bf;
                transform: rotate(-45deg);
             }
          }
       }
-      @media (max-width: 520px) {
+      @media (max-width: 500px) {
          width: rem(80);
          height: rem(80);
          flex-basis: 25%;
@@ -129,14 +148,14 @@
       position: absolute;
       right: rem(-14);
       bottom: 0;
-      width: rem(70);
+      width: 50%;
       height: rem(59);
       stroke: #f6a6bf;
       stroke-width: 4;
       opacity: 0.7;
       fill: white;
       transition: transform 0.3s, opacity 0.3s;
-      @media (max-width: 520px) {
+      @media (max-width: 500px) {
          width: rem(40);
          height: rem(33);
          right: rem(-8);
