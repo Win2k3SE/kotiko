@@ -46,28 +46,8 @@
    &__body {
    }
    // .cctv__text
-   &__text {
+   &__main-text {
       grid-column: span 3;
-      font-size: rem(20);
-      line-height: 1.5;
-      font-weight: 500;
-      //   display: none;
-      p {
-         &:not(:last-child) {
-            margin-bottom: em(15, 20);
-         }
-      }
-      @media (max-width: 660px) {
-         font-size: rem(16);
-         font-weight: 400;
-         line-height: 1.4;
-         flex: 0 0 100%;
-         p {
-            &:not(:last-child) {
-               margin-bottom: em(10, 16);
-            }
-         }
-      }
    }
    // .cctv__suits
    &__suits {

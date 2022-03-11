@@ -24,6 +24,27 @@ th {
    font-weight: 600;
    @include avalue("margin-bottom", 50, 30);
 }
+[class*="main-text"] {
+   font-size: rem(20);
+   line-height: 1.5;
+   font-weight: 500;
+   p {
+      &:not(:last-child) {
+         margin-bottom: em(15, 20);
+      }
+   }
+   @media (max-width: 660px) {
+      font-size: rem(16);
+      font-weight: 400;
+      line-height: 1.4;
+      flex: 0 0 100%;
+      p {
+         &:not(:last-child) {
+            margin-bottom: em(10, 16);
+         }
+      }
+   }
+}
 .special-offer {
    position: relative;
    &::after {
@@ -214,11 +235,7 @@ br.responsive {
       left: 0;
       top: 0;
       height: 4px;
-      background: linear-gradient(
-         90deg,
-         #ff831e 0%,
-         rgba(255, 255, 255, 0.75) 120%
-      );
+      background: linear-gradient(90deg, #ff831e 0%, rgba(255, 255, 255, 0.75) 120%);
    }
    &-thumb {
       width: 16px;
