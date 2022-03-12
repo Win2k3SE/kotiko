@@ -24,6 +24,11 @@ th {
    font-weight: 600;
    @include avalue("margin-bottom", 50, 30);
 }
+[class*="__title--smaller"] {
+   @include avalue("font-size", 26, 20);
+   line-height: 1.4;
+   font-weight: 600;
+}
 [class*="main-text"] {
    font-size: rem(20);
    line-height: 1.5;

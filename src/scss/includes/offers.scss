@@ -1,5 +1,6 @@
 .offers {
    @include avalue("margin-top", 150, 100);
+   @include avalue("margin-bottom", 90, 70);
    // .offers__container
    &__container {
       position: relative;
