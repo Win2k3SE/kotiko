@@ -1,0 +1,93 @@
+.offers {
+   @include avalue("margin-top", 150, 100);
+   // .offers__container
+   &__container {
+      position: relative;
+      &::before {
+         content: "";
+         position: absolute;
+         top: 0;
+         right: 0;
+         width: 100%;
+         height: 100%;
+         z-index: -1;
+         background: no-repeat url(../../img/offers/paw.svg);
+         @media (max-width: 767px) {
+            display: none;
+         }
+      }
+   }
+   // .offers__header
+   &__header {
+   }
+   // .offers__title
+   &__title {
+   }
+   // .offers__body
+   &__body {
+      display: flex;
+      justify-content: space-between;
+      column-gap: rem(40);
+      @media (min-width: 1200px) {
+         column-gap: rem(90);
+      }
+      @media (max-width: 767px) {
+         flex-direction: column;
+         row-gap: rem(40);
+      }
+   }
+   // .offers__list
+   &__list {
+      display: flex;
+      flex-direction: column;
+      row-gap: rem(50);
+      @media (max-width: 767px) {
+         row-gap: rem(40);
+      }
+   }
+   &__left-col {
+      //   flex: 0 1 $maxWidthContainer - 550px - 90px - 65px;
+   }
+   &__right-col {
+      padding-left: 0;
+   }
+   // .offers__item
+   &__item {
+      font-size: rem(18);
+      @media (max-width: 480px) {
+         font-size: rem(16);
+      }
+      span {
+         position: relative;
+         display: flex;
+         //  flex-direction: column;
+         //  justify-content: center;
+         column-gap: rem(25);
+         align-items: center;
+         @media (max-width: 480px) {
+            column-gap: rem(18);
+         }
+         &::before {
+            @extend %ic;
+            font-size: rem(40);
+            content: "\e900";
+            color: $mainPink;
+            @media (max-width: 480px) {
+               font-size: rem(28);
+            }
+         }
+      }
+   }
+   // .offers__item-list
+   &__item-list {
+      padding-left: rem(65);
+      margin-top: rem(10);
+      display: flex;
+      flex-direction: column;
+      row-gap: rem(12);
+   }
+   // .offers__item-list-item
+   &__item-list-item {
+      color: $mainGray;
+   }
+}
