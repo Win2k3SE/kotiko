@@ -1,0 +1,100 @@
+.about-us {
+   @include avalue("margin-top", 150, 100);
+   // .about-us__container
+   &__container {
+      position: relative;
+      &::before {
+         content: "";
+         position: absolute;
+         left: 3rem;
+         top: pc(71, $containerWidth);
+         width: rem(417);
+         height: rem(396);
+         background: no-repeat url(../../img/about-us/cat.svg);
+         z-index: -1;
+         @media (max-width: 767px) {
+            width: 75%;
+            height: 75%;
+            min-width: 320px;
+            left: 2rem;
+         }
+         @media (max-width: 480px) {
+            width: 100%;
+            top: rem(-50);
+            left: 0;
+         }
+         @media (min-width: 1350px) {
+            left: pc(-47, $containerWidth);
+         }
+      }
+   }
+   // .about-us__header
+   &__header {
+      display: flex;
+      justify-content: space-between;
+      &:not(:last-child) {
+         margin-bottom: rem(60);
+      }
+      @media (max-width: 767px) {
+         flex-direction: column;
+         font-weight: 400;
+         line-height: 1.4;
+         font-size: rem(16);
+         &:not(:last-child) {
+            margin-bottom: rem(40);
+         }
+      }
+   }
+   // .about-us__title
+   &__title {
+      padding-right: rem(20);
+      font-size: rem(20);
+      line-height: math.div(28, 20);
+   }
+   // .about-us__subtitle
+   &__subtitle {
+      flex: 0 0 pc(550, $maxWidthContainer);
+      font-weight: 500;
+      font-size: rem(20);
+      line-height: 1.5;
+      @media (max-width: 767px) {
+         font-weight: 400;
+         line-height: 1.4;
+         font-size: rem(16);
+      }
+   }
+   // .about-us__body
+   &__body {
+      display: flex;
+      justify-content: space-between;
+      column-gap: rem(30);
+      @media (max-width: 767px) {
+         flex-direction: column;
+      }
+   }
+   &__left-col {
+   }
+   &__right-col {
+      flex: 0 0 pc(550, $maxWidthContainer);
+   }
+   // .about-us__text
+   &__main-text {
+      max-width: pc(400, 580);
+      font-weight: 600;
+      @media (max-width: 767px) {
+         max-width: none;
+         margin-bottom: rem(30);
+         font-size: rem(18);
+         line-height: 1.4;
+         font-weight: 400;
+      }
+   }
+   // .about-us__content
+   &__content {
+      p {
+         &:not(:last-child) {
+            margin-bottom: em(30, 20);
+         }
+      }
+   }
+}
