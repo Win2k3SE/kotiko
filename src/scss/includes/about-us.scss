@@ -67,7 +67,10 @@
    &__body {
       display: flex;
       justify-content: space-between;
-      column-gap: rem(30);
+      column-gap: rem(40);
+      @media (min-width: 1200px) {
+         column-gap: rem(90);
+      }
       @media (max-width: 767px) {
          flex-direction: column;
       }
@@ -75,11 +78,11 @@
    &__left-col {
    }
    &__right-col {
-      flex: 0 0 pc(550, $maxWidthContainer);
+      // flex: 0 0 pc(550, $maxWidthContainer);
+      // flex: 0 0 550px + 60px;
    }
    // .about-us__text
    &__main-text {
-      max-width: pc(400, 580);
       font-weight: 600;
       @media (max-width: 767px) {
          max-width: none;

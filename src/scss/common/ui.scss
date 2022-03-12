@@ -45,6 +45,13 @@ th {
       }
    }
 }
+[class*="right-col"] {
+   padding-left: rem(65);
+   flex: 0 0 pc(550 + 65, $maxWidthContainer);
+   @media (max-width: 767px) {
+      padding-left: 0;
+   }
+}
 .special-offer {
    position: relative;
    &::after {
