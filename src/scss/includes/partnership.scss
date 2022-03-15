@@ -1,0 +1,106 @@
+.partnership {
+   @include avalue("margin-top", 150, 100);
+   @include avalue("margin-bottom", 150, 100);
+   // .partnership__container
+   &__container {
+   }
+   &__header {
+   }
+   // .partnership__title
+   &__title {
+   }
+   // .partnership__body
+   &__body {
+   }
+   // .partnership__subsection
+   &__subsection {
+      display: flex;
+      row-gap: rem(30);
+      @media (max-width: 991px) {
+         flex-wrap: wrap;
+      }
+   }
+   // .partnership__left-col
+   &__left-col {
+      flex-shrink: 1;
+   }
+   // .partnership__subsection-title
+   &__subsection-title {
+      margin-bottom: rem(30);
+      font-size: rem(20);
+      font-weight: 600;
+   }
+   // .partnership__subsection-subtitle
+   &__subsection-subtitle {
+      font-size: rem(20);
+      line-height: 1.5;
+      font-weight: 500;
+      @media (min-width: 992px) {
+         max-width: rem(490);
+      }
+   }
+   // .partnership__right-col
+   &__right-col {
+      flex: 1 1 rem(550);
+   }
+   // .partnership__partners
+   &__partners {
+      display: grid;
+      grid-template: auto/ repeat(2, rem(247));
+      gap: rem(15);
+      justify-content: end;
+      @media (max-width: 991px) {
+         justify-content: space-around;
+         row-gap: rem(30);
+      }
+      @media (max-width: 640px) {
+         grid-template: auto/1fr;
+      }
+   }
+   // .partnership__partner
+   &__partner {
+      flex: 0 0 rem(247);
+      height: rem(247);
+      width: rem(247);
+      border: 1px solid $mainPink;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: rem(20);
+      line-height: 1.5;
+      font-weight: 500;
+      text-align: center;
+      padding: rem(25);
+      position: relative;
+      &::before {
+         content: "";
+         position: absolute;
+         top: 50%;
+         background: no-repeat center url(../../img/partnership/paw.svg);
+         left: 50%;
+         transform: translate(-50%, -50%);
+         width: rem(193);
+         height: rem(157);
+         opacity: 0.075;
+      }
+      @media (max-width: 640px) {
+         width: 100%;
+         height: auto;
+         border: none;
+         padding-left: rem(110);
+         justify-content: start;
+         border-radius: 0;
+         text-align: left;
+         flex: auto;
+         &::before {
+            width: rem(72);
+            height: rem(72);
+            background-size: rem(72);
+            opacity: 0.7;
+            left: 0;
+            transform: translateY(-50%);
+         }
+      }
+   }
+}
