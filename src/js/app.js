@@ -13,3 +13,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 import { hideAndToggle } from "./modules/hider-and-toggler.js"
 hideAndToggle()
+
+import { initSpoilers } from "./modules/spoiler.js"
+document.addEventListener("DOMContentLoaded", initSpoilers)

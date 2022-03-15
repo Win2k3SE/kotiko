@@ -18,6 +18,9 @@ th {
    text-align: left;
    font-weight: inherit;
 }
+[data-spoiler] {
+   cursor: pointer;
+}
 [class*="__title"] {
    @include avalue("font-size", 40, 20);
    line-height: math.div(49, 40);
