@@ -61,6 +61,7 @@ body {
    max-width: $maxWidthContainer + 15 + px;
    margin: 0 auto;
    padding: 0 15px;
+
    // @media (max-width: $md1 + px) {
    //     max-width: 970px;
    // }
@@ -82,6 +83,9 @@ body {
       }
       @if ($containerPadding > 0) {
          padding: 0 math.div($containerPadding, 2) + px;
+         @media (max-width: 479.98px) {
+            padding: 0 10px;
+         }
       }
    }
 } @else if ($responsiveType == 2) {
