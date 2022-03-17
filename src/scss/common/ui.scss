@@ -21,6 +21,9 @@ th {
 [data-spoiler] {
    cursor: pointer;
 }
+[class*="image-sprite"] {
+   display: none;
+}
 [class*="__title"] {
    @include avalue("font-size", 40, 20);
    line-height: math.div(49, 40);
