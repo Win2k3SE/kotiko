@@ -13,21 +13,38 @@
    &__body {
       padding-top: rem(10);
       padding-bottom: rem(10);
+      @media (max-width: 1200px) {
+         margin-left: rem(-15);
+         margin-right: rem(-15);
+      }
+      @media (max-width: 478.98px) {
+         margin-left: rem(-10);
+         margin-right: rem(-10);
+      }
+   }
+   &__fear {
+      &:not(:last-child) {
+         margin-bottom: rem(5);
+      }
    }
    // .fears__fear-title
    &__fear-title {
       line-height: 1.5;
       font-weight: 600;
       position: relative;
-      padding: rem(20) rem(30);
+      padding: rem(20) rem(90) rem(20) rem(30);
       background-color: rgba(250, 247, 245, 0.4);
       @media (any-hover: hover) {
          &:hover {
             background-color: rgba(250, 247, 245, 0.8);
          }
       }
-      &:not(:first-child) {
-         margin-top: rem(5);
+      @media (max-width: 767.98px) {
+         padding: rem(15) rem(50) rem(15) rem(20);
+      }
+      @media (max-width: 480px) {
+         padding: rem(10) rem(45) rem(10) rem(15);
+         font-weight: 500;
       }
       &::before,
       &::after {
@@ -37,19 +54,41 @@
          transform: translateY(-50%);
          margin-left: rem(30);
          background-color: $mainPink;
+         @media (max-width: 992px) {
+            margin-left: rem(20);
+         }
+         @media (max-width: 480px) {
+            margin-left: rem(15);
+         }
       }
       &::before {
-         right: 0;
+         right: 30px;
          width: 30px;
          height: 2px;
          transition: transform 0.5s;
          opacity: 1;
+         @media (max-width: 992px) {
+            width: rem(20);
+            right: 20px;
+         }
+         @media (max-width: 480px) {
+            width: rem(15);
+            right: 15px;
+         }
       }
       &::after {
-         right: 14px;
+         right: 14px + 30px;
          width: 2px;
          height: 30px;
          transition: transform 0.5s;
+         @media (max-width: 992px) {
+            right: 10px + 20px;
+            height: 20px;
+         }
+         @media (max-width: 480px) {
+            right: 7px + 15px;
+            height: 15px;
+         }
       }
       &._spoiler--open {
          &::before {
