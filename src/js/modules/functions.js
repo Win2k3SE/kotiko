@@ -4,13 +4,15 @@ export function isWebp() {
 export function getPropertyValue(el, prop) {
    return parseInt(getComputedStyle(el)[prop])
 }
-const spoilerOpenClassName = "_spoiler--open"
-const spoilerIsSlidingClassName = "_spoiler--sliding"
+const spoilerIsOpenClassName = "_spoiler--open"
+const spoilerIsSlidingClassName = "_spoiler--is-sliding"
 const spoilerIsInitClassName = "_spoiler--init"
 const DEFAULT_DURATION = 500
 export function slideUp(el, duration = DEFAULT_DURATION) {
    if (!el) return
    if (el.classList.contains(spoilerIsSlidingClassName)) return
+   el.classList.remove(spoilerIsOpenClassName)
+   el.classList.add(spoilerIsSlidingClassName)
    el.style.transitionProperty = "height, margin, padding" /* [1.1] */
    el.style.transitionDuration = duration + "ms" /* [1.2] */
    el.style.boxSizing = "border-box" /* [2] */
@@ -62,6 +64,7 @@ export function slideDown(el, duration = DEFAULT_DURATION) {
       el.style.removeProperty("height")
       el.style.removeProperty("overflow")
       el.classList.remove(spoilerIsSlidingClassName)
+      el.classList.add(spoilerIsOpenClassName)
    }, duration)
 }
 export function slideToggle(el, duration = DEFAULT_DURATION) {
