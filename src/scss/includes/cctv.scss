@@ -54,29 +54,24 @@
    }
 }
 .cctv-suits {
-   &__suits {
-      display: grid;
-      grid-template-rows: auto;
-      grid-template-columns: repeat(auto-fill, rem(140));
-      gap: rem(55) rem(36);
-      justify-content: space-between;
-      @media (max-width: 767px) {
-         gap: rem(25) rem(26);
-      }
-      @media (max-width: 660px) {
-         grid-template-columns: repeat(3, rem(140));
-         justify-content: space-around;
-      }
-      @media (max-width: 500px) {
-         grid-template-columns: repeat(3, rem(80));
-      }
+   display: flex;
+   flex-direction: column;
+   row-gap: rem(55);
+   @media (max-width: 767px) {
+      row-gap: rem(25);
    }
+   &__suits,
    &__additional-suits {
       display: grid;
       justify-content: space-between;
-      grid-template-columns: repeat(auto-fill, rem(140));
-      gap: rem(55) rem(36);
-      margin-top: rem(36);
+      grid-template: auto/repeat(auto-fill, rem(140));
+      // gap: rem(55) rem(36);
+      clear: rem(36);
+      // outline: 1px solid blueviolet;
+      @media (max-width: 767px) {
+         // gap: rem(25) rem(26);
+         column-gap: rem(26);
+      }
       @media (max-width: 660px) {
          grid-template-columns: repeat(3, rem(140));
          justify-content: space-around;
@@ -84,15 +79,37 @@
       @media (max-width: 500px) {
          grid-template-columns: repeat(3, rem(80));
       }
+   }
+   &__suits {
+      // margin-bottom: rem(25);
+   }
+   &__additional-suits {
+      // margin-top: rem(25);
+      // margin-bottom: rem(25);
+      // outline: 1px solid olivedrab;
       &[hidden] {
          display: none;
       }
-   }
-   &__image-sprite {
-      display: none;
+      &._spoiler--open {
+         // margin-top: rem(0);
+      }
+      &._spoiler--is-sliding {
+         // margin-top: 25px;
+      }
+      &._spoiler--is-sliding-up {
+         // margin-top: rem(25);
+      }
+      &._spoiler--is-sliding-down {
+         // margin-top: rem(25);
+      }
    }
    // .suits__suit
    &__suit {
+      margin-bottom: rem(55);
+      @media (max-width: 767px) {
+         // gap: rem(25) rem(26);
+         margin-bottom: rem(25);
+      }
       @include flex-center;
       width: rem(140);
       height: rem(140);
@@ -118,9 +135,6 @@
          width: rem(80);
          height: rem(80);
          flex-basis: 25%;
-      }
-      &--empty {
-         //  visibility: hidden;
       }
    }
    // .suit__image
@@ -148,8 +162,12 @@
       width: 100%;
       text-align: center;
       margin-top: rem(15);
+      @media (max-width: 767px) {
+         margin-top: rem(15);
+      }
       padding: rem(15) 0;
       display: none;
+      // outline: 1px solid navajowhite;
       &--active {
          display: block;
       }
