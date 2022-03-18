@@ -2,31 +2,31 @@ import { addElements } from "./flexbox-empty-elements-inserter.js"
 import { getPropertyValue, slideUp, slideDown } from "./functions.js"
 
 let hidden = null
-const container = document.querySelector(".cctv-suits__suits")
+const mainContainer = document.querySelector(".cctv-suits__suits")
 const additionalContainer = document.querySelector(".cctv-suits__additional-suits")
-const columnGap = getPropertyValue(container, "column-gap")
-const suits = container.querySelectorAll(".cctv-suits__suit")
-const showMoreButton = container.parentElement.querySelector(".cctv-suits__show-more")
+const columnGap = getPropertyValue(mainContainer, "column-gap")
+const showMoreButton = mainContainer.parentElement.querySelector(".cctv-suits__show-more")
+const activeButtonClassName = "cctv-suits__show-more--active"
 const maxSuits = 9
 const maxRows = 2
-const hiddenSuits = []
+const timeout = 1500
 const map = {
    1: "red",
    2: "blue",
    3: "green",
 }
-
+// not working
 export function elementsToShow() {
    let els = 0
    const arr = []
    const containerWidth =
-      container.offsetWidth -
-      getPropertyValue(container, "padding-left") -
-      getPropertyValue(container, "padding-right")
+      mainContainer.offsetWidth -
+      getPropertyValue(mainContainer, "padding-left") -
+      getPropertyValue(mainContainer, "padding-right")
    let width = containerWidth
-   for (let i = 0, currentRow = 1; i < container.children, currentRow <= maxRows; i++) {
-      console.log("row " + currentRow + " starting width", width, container.offsetWidth)
-      const child = container.children[i]
+   for (let i = 0, currentRow = 1; i < mainContainer.children, currentRow <= maxRows; i++) {
+      console.log("row " + currentRow + " starting width", width, mainContainer.offsetWidth)
+      const child = mainContainer.children[i]
       if (child === undefined) break
       if (child.offsetWidth === undefined) {
          els += 1
@@ -50,42 +50,40 @@ export function elementsToShow() {
    console.log("elementsToShow", els, arr)
    return els
 }
-function show() {
-   console.log("showing", hiddenSuits.length)
-   container.querySelectorAll(".cctv-suits__suit--empty").forEach((el) => el.remove())
-   for (let i = 0; i < hiddenSuits.length; i++) {
-      container.append(hiddenSuits[i])
+function fromMainToAdditional() {
+   // console.log("fromMainToAdditional", mainContainer.children.length)
+   const arr = []
+   for (let i = maxSuits + 1; i < mainContainer.children.length; i++) {
+      arr.push(mainContainer.children[i])
    }
-   hiddenSuits.length = 0
-   hidden = false
-   // addElements(".cctv-suits__suits", "cctv-suits__suit")
+   arr.forEach((el) => additionalContainer.append(el))
 }
-function hide() {
-   console.log("hiding!")
-   for (let i = 0; i < suits.length; i++) {
-      if (i >= maxSuits) {
-         hiddenSuits.push(suits[i])
-         suits[i].remove()
-      }
+function fromAdditionalToMain() {
+   // console.log("fromAdditionalToMain!")
+   const arr = []
+   for (const suit of additionalContainer.children) {
+      arr.push(suit)
    }
-   hidden = true
-   // addElements(".cctv-suits__suits", "cctv-suits__suit")
+   arr.forEach((el) => mainContainer.append(el))
 }
 function hideButton() {
-   showMoreButton.classList.remove("cctv-suits__show-more--active")
+   showMoreButton.classList.remove(activeButtonClassName)
 }
 function showButton() {
-   if (!showMoreButton.classList.contains("cctv-suits__show-more--active")) {
-      showMoreButton.classList.add("cctv-suits__show-more--active")
+   if (!showMoreButton.classList.contains(activeButtonClassName)) {
+      showMoreButton.classList.add(activeButtonClassName)
    }
 }
+
 function hideAndToggle() {
    if (hidden === true) {
-      slideDown(additionalContainer, 300)
+      slideDown(additionalContainer, timeout)
+      setTimeout(fromAdditionalToMain, timeout)
       showMoreButton.textContent = "Свернуть"
       hidden = false
    } else {
-      slideUp(additionalContainer, 300)
+      fromMainToAdditional()
+      slideUp(additionalContainer, timeout)
       showMoreButton.textContent = "Смотреть еще"
       hidden = true
    }
@@ -93,15 +91,17 @@ function hideAndToggle() {
 export function hideToggle() {
    if (document.documentElement.offsetWidth > 600) {
       if (hidden === null || hidden === true) {
-         // show()
-         slideDown(additionalContainer, 300)
+         slideDown(additionalContainer, timeout)
+         setTimeout(fromAdditionalToMain, timeout)
+         showMoreButton.textContent = "Свернуть"
          hideButton()
          hidden = false
       }
    } else {
       if (hidden === null || hidden === false) {
-         // hide()
-         slideUp(additionalContainer, 300)
+         fromMainToAdditional()
+         slideUp(additionalContainer, timeout)
+         showMoreButton.textContent = "Смотреть еще"
          showButton()
          hidden = true
       }
