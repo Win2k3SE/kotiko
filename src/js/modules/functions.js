@@ -6,6 +6,8 @@ export function getPropertyValue(el, prop) {
 }
 const spoilerIsOpenClassName = "_spoiler--open"
 const spoilerIsSlidingClassName = "_spoiler--is-sliding"
+const spoilerIsSlidingUpClassName = `${spoilerIsSlidingClassName}-up`
+const spoilerIsSlidingDownClassName = `${spoilerIsSlidingClassName}-down`
 const spoilerIsInitClassName = "_spoiler--init"
 const DEFAULT_DURATION = 500
 export function slideUp(el, duration = DEFAULT_DURATION) {
@@ -13,6 +15,7 @@ export function slideUp(el, duration = DEFAULT_DURATION) {
    if (el.classList.contains(spoilerIsSlidingClassName)) return
    el.classList.remove(spoilerIsOpenClassName)
    el.classList.add(spoilerIsSlidingClassName)
+   el.classList.add(spoilerIsSlidingUpClassName)
    el.style.transitionProperty = "height, margin, padding" /* [1.1] */
    el.style.transitionDuration = duration + "ms" /* [1.2] */
    el.style.boxSizing = "border-box" /* [2] */
@@ -36,12 +39,14 @@ export function slideUp(el, duration = DEFAULT_DURATION) {
       el.style.removeProperty("transition-duration") /* [13.1] */
       el.style.removeProperty("transition-property") /* [13.2] */
       el.classList.remove(spoilerIsSlidingClassName)
+      el.classList.remove(spoilerIsSlidingUpClassName)
    }, duration)
 }
 export function slideDown(el, duration = DEFAULT_DURATION) {
    if (!el) return
    if (el.classList.contains(spoilerIsSlidingClassName)) return
    el.classList.add(spoilerIsSlidingClassName)
+   el.classList.add(spoilerIsSlidingDownClassName)
    el.hidden = false
    const height = el.offsetHeight
    el.style.transitionDuration = duration + "ms"
@@ -64,6 +69,7 @@ export function slideDown(el, duration = DEFAULT_DURATION) {
       el.style.removeProperty("height")
       el.style.removeProperty("overflow")
       el.classList.remove(spoilerIsSlidingClassName)
+      el.classList.remove(spoilerIsSlidingDownClassName)
       el.classList.add(spoilerIsOpenClassName)
    }, duration)
 }
