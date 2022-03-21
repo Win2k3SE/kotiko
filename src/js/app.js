@@ -34,3 +34,5 @@ function resizeMap(e) {
 }
 window.addEventListener("resize", resizeMap)
 document.addEventListener("DOMContentLoaded", resizeMap)
+
+import "./modules/forms.js"
