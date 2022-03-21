@@ -120,23 +120,6 @@ th {
    }
 }
 
-.select-shadow-wrapper {
-   position: relative;
-   .options {
-      visibility: hidden;
-      overflow: hidden;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      z-index: 50;
-      &--open {
-         visibility: visible;
-      }
-      .option {
-         white-space: nowrap;
-      }
-   }
-}
 .header-burger-button {
    opacity: 0.8;
    font-weight: 600;
@@ -171,71 +154,6 @@ th {
 }
 br.responsive {
    display: none;
-}
-.dynamic-select {
-   display: flex;
-   align-items: center;
-   // margin-top: 10px;
-   flex: 0 0 auto;
-   border: 1px solid #828282;
-   border-radius: 4px;
-   height: 50px;
-   .select-shadow-wrapper {
-      white-space: nowrap;
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      .selected-option {
-         cursor: pointer;
-         position: relative;
-         width: 100%;
-         &::after {
-            @include transition;
-            content: "\e902";
-            font-family: icons;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            right: 20px;
-            width: 14px;
-            height: 10px;
-            padding-left: 20px;
-            @include fon(10, 10);
-         }
-         &--open {
-            &::after {
-               transform: translateY(-50%) rotateX(180deg);
-            }
-         }
-      }
-      .options {
-         width: 100%;
-         padding: 7px 0;
-         background: #fdfdfd;
-         border: 1px solid #bdbdbd;
-         border-radius: 5px;
-         @include afont(16, 12);
-         .option {
-            &:hover {
-               background-color: rgba(213, 233, 247, 0.3);
-            }
-         }
-      }
-      .option {
-         width: 100%;
-         padding: 7px 34px 7px 14px;
-         cursor: pointer;
-         &[data-selected] {
-            background-color: #d5e9f7;
-         }
-      }
-   }
-   select {
-      font-size: inherit;
-      option {
-         padding: 5px;
-      }
-   }
 }
 .range-slider {
    background-color: #828282;
