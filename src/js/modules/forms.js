@@ -8,6 +8,23 @@ import "jquery-ui/themes/base/datepicker.css"
 const options = {
    minDate: new Date(),
    dateFormat: "dd.mm.yy",
+   beforeShowDay: function (date) {
+      function generateClassName() {
+         if (startDate && endDate) {
+            if (date.getTime() > startDate.getTime() && date.getTime() < endDate.getTime())
+               return "date-range-selected"
+            if (date.getTime() === startDate.getTime()) {
+               return "date-range-selected-start-end date-range-selected-start"
+            }
+            if (date.getTime() == endDate.getTime()) {
+               return "date-range-selected-start-end date-range-selected-end "
+            }
+         }
+
+         return ""
+      }
+      return [true, generateClassName(date)]
+   },
 }
 let startDate
 let endDate
