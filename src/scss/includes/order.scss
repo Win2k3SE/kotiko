@@ -76,7 +76,7 @@
 .order-form {
    // .order-form__form
    &__form {
-      background-color: rgba(255, 254, 241, 0.95);
+      background-color: rgba($mainYellow, 0.95);
       @include avalue("padding-top", 60, 20);
       @include avalue("padding-right", 50, 10);
       @include avalue("padding-bottom", 60, 20);
