@@ -34,14 +34,15 @@ const from = $(".order-form__start-date")
    .on("change", function (e) {
       startDate = getDate(this)
       console.log("startDate", startDate)
-      to.datepicker("option", "minDate", startDate)
+      to.datepicker("hide")
+      setTimeout(() => to.datepicker("option", "minDate", startDate), 300)
    })
 const to = $(".order-form__end-date")
    .datepicker(options)
    .on("change", function (e) {
       endDate = getDate(this)
       console.log("endDate", endDate)
-      from.datepicker("option", "maxDate", endDate)
+      setTimeout(() => from.datepicker("option", "maxDate", endDate), 300)
    })
 function getDate(el) {
    let result = null
