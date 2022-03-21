@@ -1,0 +1,83 @@
+.dynamic-select {
+   display: flex;
+   align-items: center;
+   flex: auto;
+   flex-basis: 38%;
+   .options {
+      visibility: hidden;
+      overflow: hidden;
+      position: absolute;
+      top: rem(35);
+      left: 0;
+      z-index: 50;
+      &--open {
+         visibility: visible;
+      }
+      .option {
+         white-space: nowrap;
+      }
+   }
+   .select-shadow-wrapper {
+      white-space: nowrap;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      position: relative;
+      .selected-option {
+         cursor: pointer;
+         position: relative;
+         width: 100%;
+         &::after {
+            @include transition;
+            // content: "\e902";
+            font-family: icons;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 20px;
+            width: 14px;
+            height: 10px;
+            padding-left: 20px;
+            @include fon(10, 10);
+         }
+         &--open {
+            &::after {
+               transform: translateY(-50%) rotateX(180deg);
+            }
+         }
+      }
+      .options {
+         width: 110%;
+         margin-left: -5%;
+         padding: 7px 0;
+         background: $mainYellow;
+         border: 1px solid #bdbdbd;
+         border-radius: 5px;
+         @include afont(16, 12);
+         .option {
+            padding: rem(12) 5%;
+         }
+         .option:not([data-value=""]) {
+            &:hover {
+               background-color: rgba($mainPink, 0.3);
+            }
+         }
+      }
+      .option {
+         width: 100%;
+         cursor: pointer;
+         &[data-selected] {
+            background-color: $mainPink;
+         }
+         &[data-value=""] {
+            opacity: 0.5;
+         }
+      }
+   }
+   select {
+      font-size: inherit;
+      option {
+         padding: 5px;
+      }
+   }
+}
