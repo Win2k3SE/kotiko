@@ -1,0 +1,40 @@
+.ui-datepicker {
+   color: $mainTextColor;
+   font-family: $fontFamily !important;
+   background-color: $mainYellow !important;
+   &-header {
+      background-color: rgba($mainPink, 0.1) !important;
+   }
+   .ui-state-default {
+      background-color: rgba($mainPink, 0.1) !important;
+      &.ui-state-highlight {
+         background-color: rgba($mainGreen, 0.3) !important;
+         border-color: $mainGreen !important;
+      }
+      &.ui-state-active {
+         border-color: $mainGray !important;
+         background-color: rgba($mainPink, 0.3) !important;
+         color: $mainTextColor;
+      }
+   }
+   .date-range-selected {
+      background-color: rgba($mainPink, 0.2) !important;
+      .ui-state-default {
+      }
+      &-start {
+         background-color: rgba($mainPink, 0.6) !important;
+         border-color: $mainTextColor;
+         .ui-state-default {
+            border-color: $mainTextColor !important;
+            color: $mainTextColor;
+         }
+      }
+      &-end {
+         background-color: rgba($mainPink, 0.6) !important;
+         .ui-state-default {
+            border-color: $mainTextColor !important;
+            color: $mainTextColor;
+         }
+      }
+   }
+}
