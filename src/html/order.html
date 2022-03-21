@@ -19,7 +19,14 @@
                     </div>
                     <div class="order-form__row order-form__row--two-inputs">
                         <input type="text" class="order-form__input" placeholder="Кличка животного">
-                        <input type="text" class="order-form__input" placeholder="Тип номера">
+                        <div class="dynamic-select order-form__input">
+                            <select name=" suite-type" id="suite-type">
+                                <option value="">Тип номера</option>
+                                <option value="suit-1">Стандарт</option>
+                                <option value="suit-2">Стандарт+</option>
+                                <option value="suite-3">Люкс</option>
+                            </select>
+                        </div>
                     </div>
                     <div class="order-form__row">
                         <input type="text" class="order-form__input" placeholder="Примечание">

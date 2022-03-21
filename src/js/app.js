@@ -36,3 +36,6 @@ window.addEventListener("resize", resizeMap)
 document.addEventListener("DOMContentLoaded", resizeMap)
 
 import "./modules/forms.js"
+
+import { createCustomSelectEl } from "./modules/dynamic-select.js"
+document.querySelectorAll(".dynamic-select").forEach((el) => createCustomSelectEl(el))
