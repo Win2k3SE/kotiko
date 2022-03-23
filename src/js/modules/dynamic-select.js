@@ -5,6 +5,7 @@ function createCustomSelect(selector) {
    }
 }
 export function createCustomSelectEl(el) {
+   const ALLOW_SELECTING_EMPTY = true
    const TARGET_SELECT_SELECTOR = "select"
    const WRAPPER_CLASSNAME = "select-shadow-wrapper"
    const SELECTED_OPTION_CLASSNAME = "selected-option"
@@ -24,7 +25,13 @@ export function createCustomSelectEl(el) {
    }
 
    selectedOption.classList = select.firstElementChild.classList
-   selectedOption.textContent = select.firstElementChild.textContent
+   const preSelectedOption = Array.prototype.find.call(select.children, (el) => el.selected)
+   if (preSelectedOption) {
+      selectedOption.dataset.value = preSelectedOption.value
+      selectedOption.textContent = preSelectedOption.textContent
+   } else {
+      selectedOption.textContent = select.firstElementChild.textContent
+   }
    selectedOption.classList.add(SELECTED_OPTION_CLASSNAME, OPTION_CLASSNAME)
    selectedOption.addEventListener("click", toggleOptions)
    const options = document.createElement("div")
@@ -70,18 +77,25 @@ export function createCustomSelectEl(el) {
       }
       return child
    }
+
    function changeValue(e) {
       const option = e.target.closest(`.${OPTION_CLASSNAME}`)
       const wrapper = e.target.closest(`.${WRAPPER_CLASSNAME}`)
+      function doChangeValue() {
+         for (const child of option.closest(`.${OPTIONS_CLASSNAME}`).children) {
+            child.removeAttribute("data-selected")
+         }
+         const value = option.dataset.value
+         select.value = value
+         option.dataset.selected = true
+         selectedOption.textContent = option.textContent
+         selectedOption.dataset.value = value
+      }
       if (option) {
-         if (option.dataset.value) {
-            for (const child of option.closest(`.${OPTIONS_CLASSNAME}`).children) {
-               child.removeAttribute("data-selected")
-            }
-            const value = option.dataset.value
-            select.value = value
-            option.dataset.selected = true
-            selectedOption.textContent = option.textContent
+         if (!option.dataset.value) {
+            if (ALLOW_SELECTING_EMPTY) doChangeValue()
+         } else {
+            doChangeValue()
          }
       } else if (e.target.closest(".options")) {
          resetValue()
@@ -100,7 +114,7 @@ export function createCustomSelectEl(el) {
       }
    }
    function toggleOptions(e) {
-      closeAllOptions()
+      closeOtherOptionsInForm(e)
       const wrapper = e.target.closest(`.${WRAPPER_CLASSNAME}`)
       options.classList.toggle(`${OPTIONS_CLASSNAME}--open`)
       wrapper
@@ -125,6 +139,20 @@ export function createCustomSelectEl(el) {
    function closeAllOptions() {
       const dynamicSelects = document.querySelectorAll(".dynamic-select")
       dynamicSelects.forEach((el) => {
+         const openOptions = el.querySelector(`.${OPTIONS_CLASSNAME}--open`)
+         if (openOptions) openOptions.classList.remove(`${OPTIONS_CLASSNAME}--open`)
+         const openSelectedOption = el.querySelector(`.${SELECTED_OPTION_CLASSNAME}--open`)
+         if (openSelectedOption)
+            openSelectedOption.classList.remove(`${SELECTED_OPTION_CLASSNAME}--open`)
+      })
+   }
+   function closeOtherOptionsInForm(e) {
+      const form = e.target.closest("form")
+      const targetSelect = e.target.closest(".dynamic-select")
+      if (!form) return
+      const dynamicSelects = form.querySelectorAll(".dynamic-select")
+      dynamicSelects.forEach((el) => {
+         if (el === targetSelect) return
          const openOptions = el.querySelector(`.${OPTIONS_CLASSNAME}--open`)
          if (openOptions) openOptions.classList.remove(`${OPTIONS_CLASSNAME}--open`)
          const openSelectedOption = el.querySelector(`.${SELECTED_OPTION_CLASSNAME}--open`)
