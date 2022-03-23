@@ -4,12 +4,16 @@ button {
    cursor: pointer;
    color: inherit;
 }
-input {
+input,
+textarea {
    font-weight: inherit;
    background-color: inherit;
    font-size: inherit;
    line-height: inherit;
    font-weight: inherit;
+   &::placeholder {
+      font-size: inherit;
+   }
 }
 a {
    color: inherit;
