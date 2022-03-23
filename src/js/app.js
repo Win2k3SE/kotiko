@@ -35,7 +35,10 @@ function resizeMap(e) {
 window.addEventListener("resize", resizeMap)
 document.addEventListener("DOMContentLoaded", resizeMap)
 
-import "./modules/forms.js"
+import "./modules/datepicker.js"
 
 import { createCustomSelectEl } from "./modules/dynamic-select.js"
 document.querySelectorAll(".dynamic-select").forEach((el) => createCustomSelectEl(el))
+
+import { togglePlaceholderOnFocus } from "./modules/inputs.js"
+togglePlaceholderOnFocus()
