@@ -40,5 +40,6 @@ import "./modules/datepicker.js"
 import { createCustomSelectEl } from "./modules/dynamic-select.js"
 document.querySelectorAll(".dynamic-select").forEach((el) => createCustomSelectEl(el))
 
-import { togglePlaceholderOnFocus } from "./modules/inputs.js"
+import { markRequiredFields, togglePlaceholderOnFocus } from "./modules/inputs.js"
 togglePlaceholderOnFocus()
+markRequiredFields()
