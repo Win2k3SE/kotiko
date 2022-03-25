@@ -13,7 +13,10 @@ export function createCustomSelectEl(el) {
    const OPTION_CLASSNAME = "option"
    const select = el.querySelector(TARGET_SELECT_SELECTOR)
    const selectShadowWrapper = document.createElement("div")
+   copyAttributes(select, selectShadowWrapper)
    selectShadowWrapper.classList.add(WRAPPER_CLASSNAME)
+   // selectShadowWrapper.classList.add(...select.classList)
+   select.classList = []
    // const selectedOption = copyWithAttributes(select.firstElementChild)
    const selectedOption = document.createElement("div")
 
@@ -27,8 +30,11 @@ export function createCustomSelectEl(el) {
    selectedOption.classList = select.firstElementChild.classList
    const preSelectedOption = Array.prototype.find.call(select.children, (el) => el.selected)
    if (preSelectedOption) {
-      selectedOption.dataset.value = preSelectedOption.value
+      selectedOption.value = preSelectedOption.value
+      selectedOption.setAttribute("value", preSelectedOption.value)
       selectedOption.textContent = preSelectedOption.textContent
+      selectShadowWrapper.value = preSelectedOption.value
+      selectShadowWrapper.setAttribute("value", preSelectedOption.value)
    } else {
       selectedOption.textContent = select.firstElementChild.textContent
    }
@@ -44,7 +50,7 @@ export function createCustomSelectEl(el) {
    }
    selectShadowWrapper.append(selectedOption)
    selectShadowWrapper.append(options)
-   select.parentElement.append(selectShadowWrapper)
+   select.parentElement.prepend(selectShadowWrapper)
    const maxWidth = getMaxWidth()
    // const maxWidth = 300
    // selectShadowWrapper.style.width = `${maxWidth}px`
@@ -67,10 +73,21 @@ export function createCustomSelectEl(el) {
          closeOptions()
       }
    })
+   function copyAttributes(from, to) {
+      for (const attr of from.attributes) {
+         // console.log(attr.nodeName, attr.nodeValue)
+         if (attr.nodeName === "value") {
+            to.value = attr.nodeValue
+         } else {
+            to.setAttribute(attr.nodeName, attr.nodeValue)
+         }
+      }
+   }
    function copyWithAttributes(el) {
       const child = document.createElement("div")
-      child.classList = el.classList
-      child.dataset.value = el.value
+      copyAttributes(el, child)
+      // child.classList = el.classList
+      // child.dataset.value = el.value
       child.textContent = el.textContent
       if (select.value === el.value) {
          child.dataset.selected = true
@@ -85,14 +102,18 @@ export function createCustomSelectEl(el) {
          for (const child of option.closest(`.${OPTIONS_CLASSNAME}`).children) {
             child.removeAttribute("data-selected")
          }
-         const value = option.dataset.value
+         const value = option.value
          select.value = value
+         selectShadowWrapper.value = value
+         selectShadowWrapper.setAttribute("value", value)
          option.dataset.selected = true
          selectedOption.textContent = option.textContent
-         selectedOption.dataset.value = value
+         selectedOption.value = value
+         selectedOption.setAttribute("value", value)
+         selectShadowWrapper.dispatchEvent(new Event("change"))
       }
       if (option) {
-         if (!option.dataset.value) {
+         if (!option.value) {
             if (ALLOW_SELECTING_EMPTY) doChangeValue()
          } else {
             doChangeValue()
