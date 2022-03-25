@@ -3,6 +3,7 @@
    align-items: center;
    flex: auto;
    flex-basis: 38%;
+   flex-wrap: wrap;
    .options {
       visibility: hidden;
       overflow: hidden;
@@ -23,10 +24,16 @@
       flex-direction: column;
       width: 100%;
       position: relative;
+      &[aria-invalid="true"] {
+         border-color: red;
+      }
       .selected-option {
          cursor: pointer;
          position: relative;
          width: 100%;
+         &[value=""] {
+            color: $mainGray;
+         }
          &::after {
             @include transition;
             // content: "\e902";
