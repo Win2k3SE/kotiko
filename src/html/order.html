@@ -8,28 +8,73 @@
                 <img src="@img/order/order-bg.svg" alt="">
             </div>
             <div class="order__form order-form">
-                <form action="#" class="order-form__form">
+                <form class="order-form__form">
                     <div class="order-form__row order-form__row--two-inputs">
-                        <input type="text" class="order-form__input" placeholder="Имя">
-                        <input type="text" class="order-form__input order-form__start-date" placeholder="Дата заезда">
+                        <div class="order-form__field">
+                            <div class="order-form__input-wrapper">
+                                <input type="text" autocomplete="honorific-prefix" tabindex="1" name="client-name"
+                                    class="order-form__input" placeholder="Имя" aria-required="true">
+                            </div>
+                            <ul class="order-form__error-list"></ul>
+                        </div>
+                        <div class="order-form__field">
+                            <div class="order-form__input-wrapper">
+                                <input type="text" tabindex="2" name="start-date"
+                                    class="order-form__input order-form__start-date" placeholder="Дата заезда"
+                                    aria-required="true" spellcheck="false">
+                            </div>
+                            <ul class="order-form__error-list"></ul>
+                        </div>
                     </div>
                     <div class="order-form__row order-form__row--two-inputs">
-                        <input type="tel" class=" order-form__input" placeholder="Телефон">
-                        <input type="text" class="order-form__input order-form__end-date" placeholder="Дата выезда">
+                        <div class="order-form__field">
+                            <div class="order-form__input-wrapper">
+                                <input type="tel" autocomplete="off" data-rule="tel" data-min-length="6"
+                                    data-max-length="24" tabindex="3" name="phone" class="order-form__input"
+                                    aria-required="true" placeholder="Телефон">
+                            </div>
+                            <ul class="order-form__error-list"></ul>
+                        </div>
+                        <div class="order-form__field">
+                            <div class="order-form__input-wrapper">
+                                <input type="text" tabindex="4" name="end-date"
+                                    class="order-form__input order-form__end-date" aria-required="true"
+                                    placeholder="Дата выезда" spellcheck="false">
+                            </div>
+                            <ul class="order-form__error-list"></ul>
+                        </div>
                     </div>
                     <div class="order-form__row order-form__row--two-inputs">
-                        <input type="text" class="order-form__input" placeholder="Кличка животного">
-                        <div class="dynamic-select order-form__input">
-                            <select name=" suite-type" id="suite-type">
-                                <option value="">Тип номера</option>
-                                <option value="suit-1">Стандарт</option>
-                                <option value="suit-2">Стандарт+</option>
-                                <option value="suite-3">Люкс</option>
-                            </select>
+                        <div class="order-form__field">
+                            <div class="order-form__input-wrapper">
+                                <input type="text" tabindex="5" data-max-length="30" name="pet-name"
+                                    class="order-form__input" placeholder="Кличка животного">
+                            </div>
+                            <ul class="order-form__error-list"></ul>
+                        </div>
+                        <div class="order-form__field">
+                            <div class="order-form__input-wrapper">
+                                <div class="dynamic-select">
+                                    <select tabindex="6" name="suite-type" type="hidden" aria-required="true"
+                                        class="order-form__input" id="suite-type">
+                                        <option value="">Тип номера</option>
+                                        <option value="suit-1">Стандарт</option>
+                                        <option value="suit-2">Стандарт+</option>
+                                        <option value="suite-3">Люкс</option>
+                                    </select>
+                                </div>
+                                <ul class="order-form__error-list"></ul>
+                            </div>
                         </div>
                     </div>
                     <div class="order-form__row">
-                        <input type="text" class="order-form__input" placeholder="Примечание">
+                        <div class="order-form__field">
+                            <div class="order-form__input-wrapper">
+                                <textarea name="comment" tabindex="7" class="order-form__input order-form__comment"
+                                    placeholder="Примечание"></textarea>
+                            </div>
+                            <ul class="order-form__error-list"></ul>
+                        </div>
                     </div>
                     <div class="order-form__row order-form__row--button">
                         <button type="submit" class="button order-form__button">Забронировать</button>

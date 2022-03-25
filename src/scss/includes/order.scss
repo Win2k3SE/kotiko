@@ -86,14 +86,23 @@
    &__row {
       display: flex;
       flex-wrap: wrap;
-      row-gap: rem(39);
+      row-gap: rem(39 - 17-5);
+      .order-form__field {
+         flex-basis: 100%;
+      }
       input {
          flex: 0 0 100%;
       }
       &:not(:last-child) {
-         margin-bottom: rem(39);
+         margin-bottom: rem(39 - 17 - 5);
       }
       &--two-inputs {
+         .order-form__field {
+            flex-basis: 45%;
+            @media (max-width: 480px) {
+               flex-basis: 100%;
+            }
+         }
          column-gap: rem(40);
          input {
             flex: auto;
@@ -105,15 +114,68 @@
          @include avalue("margin-top", 70, 50);
       }
    }
+
+   &__input-wrapper {
+      position: relative;
+      &:focus-within {
+         &::before {
+            content: "";
+            position: absolute;
+            outline: 2px solid #ffee00;
+            border-radius: 10px;
+            top: 0px;
+            left: -10px;
+            bottom: 0px;
+            right: -10px;
+            pointer-events: none;
+         }
+      }
+   }
    // .order-form__input
    &__input {
       border-bottom: 1px solid $mainTextColor;
       padding: rem(12) 0;
+      width: 100%;
+      &::placeholder {
+         color: $mainGray;
+      }
+      &::selection {
+         background-color: #fcf37a;
+      }
+      &[aria-invalid="true"] {
+         border-color: red;
+      }
+   }
+   &__comment {
+      height: rem(47);
+      min-height: rem(47);
+      resize: vertical;
+   }
+   &__error-list {
+      margin-top: rem(5);
+      color: red;
+      font-size: rem(12);
+      visibility: hidden;
+      min-height: rem(17);
+      &--visible {
+         visibility: visible;
+      }
+      li:not(:last-child) {
+         margin-bottom: rem(7);
+      }
    }
    &__button {
       width: rem(330);
       @media (max-width: 609px) {
          width: 100%;
+      }
+   }
+   .select-shadow-wrapper {
+      .selected-option {
+         &[data-value=""] {
+            color: $mainGray;
+            opacity: 1;
+         }
       }
    }
 }
