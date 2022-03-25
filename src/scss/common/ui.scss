@@ -14,6 +14,13 @@ textarea {
    &::placeholder {
       font-size: inherit;
    }
+   &:-webkit-autofill,
+   &:-webkit-autofill:focus {
+      transition: background-color 600000s 0s, color 600000s 0s;
+   }
+}
+textarea {
+   display: block;
 }
 a {
    color: inherit;
