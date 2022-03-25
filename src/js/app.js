@@ -43,3 +43,6 @@ document.querySelectorAll(".dynamic-select").forEach((el) => createCustomSelectE
 import { markRequiredFields, togglePlaceholderOnFocus } from "./modules/inputs.js"
 togglePlaceholderOnFocus()
 markRequiredFields()
+
+import { validate } from "./modules/form-validation.js"
+validate()
