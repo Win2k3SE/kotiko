@@ -74,6 +74,19 @@ th {
       padding-left: 0;
    }
 }
+._error-list {
+   margin-top: rem(5);
+   color: red;
+   font-size: rem(12);
+   visibility: hidden;
+   min-height: rem(17 * 2);
+   &--visible {
+      visibility: visible;
+   }
+   li:not(:last-child) {
+      margin-bottom: rem(7);
+   }
+}
 .special-offer {
    position: relative;
    &::after {

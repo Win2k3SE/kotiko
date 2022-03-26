@@ -86,18 +86,18 @@
    &__row {
       display: flex;
       flex-wrap: wrap;
-      row-gap: rem(39 - 17-5);
-      .order-form__field {
+      row-gap: rem(39 - 17 * 2 - 5 - 7);
+      .order-form__column {
          flex-basis: 100%;
       }
       input {
          flex: 0 0 100%;
       }
       &:not(:last-child) {
-         margin-bottom: rem(39 - 17 - 5);
+         margin-bottom: rem(39 - 17 * 2 - 5 - 7);
       }
       &--two-inputs {
-         .order-form__field {
+         .order-form__column {
             flex-basis: 45%;
             @media (max-width: 480px) {
                flex-basis: 100%;
@@ -115,7 +115,7 @@
       }
    }
 
-   &__input-wrapper {
+   &__field {
       position: relative;
       &:focus-within {
          &::before {
@@ -151,19 +151,7 @@
       min-height: rem(47);
       resize: vertical;
    }
-   &__error-list {
-      margin-top: rem(5);
-      color: red;
-      font-size: rem(12);
-      visibility: hidden;
-      min-height: rem(17);
-      &--visible {
-         visibility: visible;
-      }
-      li:not(:last-child) {
-         margin-bottom: rem(7);
-      }
-   }
+
    &__button {
       width: rem(330);
       @media (max-width: 609px) {
