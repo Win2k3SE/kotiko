@@ -152,8 +152,19 @@
                 <p>Будьте спокойны за вашего питомца, пока вы в отъезде</p>
             </div>
             <form action="#" class="main__form">
-                <input type="text" placeholder="Имя" class="main__name">
-                <input type="tel" placeholder="Телефон" class="main__phone">
+                <div class="main__row">
+                    <div class="main__field">
+                        <input type="text" placeholder="Имя" aria-required="true" class="main__name main__input">
+                    </div>
+                    <ul class="main__error-list _error-list"></ul>
+                </div>
+                <div class="main__row">
+                    <div class="main__field">
+                        <input type="tel" data-rule="tel" name="phone" data-min-length="6" data-max-length="24"
+                            aria-required="true" placeholder="Телефон" class="main__phone main__input">
+                    </div>
+                    <ul class="main__error-list _error-list"></ul>
+                </div>
                 <button type="submit" class="main__button button main-button">Отправить заявку</button>
             </form>
             <img src="@img/first-screen/cats.svg" alt="" class="main__bg">

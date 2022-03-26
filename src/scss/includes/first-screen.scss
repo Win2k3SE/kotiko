@@ -336,16 +336,27 @@
       width: rem(230);
       font-weight: 500;
       grid-area: form;
-      input {
-         padding: rem(14) 0;
-         border-bottom: 1px solid;
-         &::placeholder {
-            color: $mainGray;
-            font-weight: 400;
-         }
-         &:first-child {
-            margin-bottom: rem(18);
-         }
+   }
+   &__row {
+      &:not(:last-child) {
+         margin-bottom: rem(18 - 17);
+      }
+   }
+   &__field {
+   }
+   &__error-list {
+      height: rem(17);
+      min-height: auto;
+   }
+   &__input {
+      padding: rem(14) 0;
+      border-bottom: 1px solid;
+      &::placeholder {
+         color: $mainGray;
+         font-weight: 400;
+      }
+      &[aria-invalid="true"] {
+         border-color: red;
       }
    }
    &__button {
