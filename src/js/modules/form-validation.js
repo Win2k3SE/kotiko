@@ -46,17 +46,18 @@ export function validate() {
    })
 }
 function validateForm(form) {
-   const fields = form.querySelectorAll(".order-form__input")
+   const errorListClassName = "_error-list"
+   const fields = form.querySelectorAll("[class*=__input]")
    for (const field of fields) {
-      const errorList = field.parentElement.parentElement.querySelector(".order-form__error-list")
+      const errorList = field.parentElement.parentElement.querySelector(`.${errorListClassName}`)
       const messages = isFieldValid(field)
       if (errorList) {
-         errorList.classList.remove("order-form__error-list--visible")
+         errorList.classList.remove(`${errorListClassName}--visible`)
          Array.prototype.forEach.call(errorList.children, (child) => child.remove())
       }
       if (messages) {
          field.setAttribute("aria-invalid", true)
-         errorList.classList.add("order-form__error-list--visible")
+         errorList.classList.add(`${errorListClassName}--visible`)
          for (const message of messages) {
             const li = document.createElement("li")
             li.setAttribute("role", "alert")
