@@ -45,16 +45,21 @@ export function validate() {
       })
    })
 }
-function validateForm(form) {
+async function validateForm(form) {
    const errorListClassName = "_error-list"
    const fields = form.querySelectorAll("[class*=__input]")
    for (const field of fields) {
       const errorList = field.parentElement.parentElement.querySelector(`.${errorListClassName}`)
-      const messages = isFieldValid(field)
       if (errorList) {
          errorList.classList.remove(`${errorListClassName}--visible`)
          Array.prototype.forEach.call(errorList.children, (child) => child.remove())
+         field.setAttribute("aria-invalid", false)
       }
+   }
+   await new Promise((resolve) => setTimeout(resolve, 300))
+   for (const field of fields) {
+      const errorList = field.parentElement.parentElement.querySelector(`.${errorListClassName}`)
+      const messages = isFieldValid(field)
       if (messages) {
          field.setAttribute("aria-invalid", true)
          errorList.classList.add(`${errorListClassName}--visible`)
@@ -64,8 +69,6 @@ function validateForm(form) {
             li.textContent = message
             errorList.append(li)
          }
-      } else {
-         field.setAttribute("aria-invalid", false)
       }
    }
 }
