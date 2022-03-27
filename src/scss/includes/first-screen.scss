@@ -351,6 +351,7 @@
    &__input {
       padding: rem(14) 0;
       border-bottom: 1px solid;
+      width: 100%;
       &::placeholder {
          color: $mainGray;
          font-weight: 400;

@@ -116,20 +116,6 @@
    }
 
    &__field {
-      position: relative;
-      &:focus-within {
-         &::before {
-            content: "";
-            position: absolute;
-            outline: 2px solid #ffee00;
-            border-radius: 10px;
-            top: 0px;
-            left: -10px;
-            bottom: 0px;
-            right: -10px;
-            pointer-events: none;
-         }
-      }
    }
    // .order-form__input
    &__input {

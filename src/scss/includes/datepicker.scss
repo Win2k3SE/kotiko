@@ -2,6 +2,7 @@
    color: $mainTextColor;
    font-family: $fontFamily !important;
    background-color: $mainYellow !important;
+   margin-left: rem(-12);
    &-header {
       background-color: rgba($mainPink, 0.1) !important;
    }
