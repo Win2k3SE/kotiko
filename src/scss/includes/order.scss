@@ -139,12 +139,6 @@
       &::placeholder {
          color: $mainGray;
       }
-      &::selection {
-         background-color: #fcf37a;
-      }
-      &[aria-invalid="true"] {
-         border-color: red;
-      }
    }
    &__comment {
       height: rem(47);

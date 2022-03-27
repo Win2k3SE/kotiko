@@ -74,14 +74,41 @@ th {
       padding-left: 0;
    }
 }
+
+[class*="__input"] {
+   transition: border-color 0.15s;
+   &[aria-invalid="true"] {
+      border-color: red;
+   }
+}
+[class*="__field"] {
+   position: relative;
+   &:focus-within {
+      &::before {
+         content: "";
+         position: absolute;
+         outline: 2px solid #ffee00;
+         border-radius: 10px;
+         top: 0px;
+         left: -10px;
+         bottom: 0px;
+         right: -10px;
+         pointer-events: none;
+      }
+   }
+}
+::selection {
+   background-color: #fcf37a;
+}
 ._error-list {
    margin-top: rem(5);
    color: red;
    font-size: rem(12);
-   visibility: hidden;
    min-height: rem(17 * 2);
+   opacity: 0;
+   transition: opacity 0.3s linear;
    &--visible {
-      visibility: visible;
+      opacity: 1;
    }
    li:not(:last-child) {
       margin-bottom: rem(7);

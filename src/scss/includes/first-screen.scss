@@ -355,9 +355,6 @@
          color: $mainGray;
          font-weight: 400;
       }
-      &[aria-invalid="true"] {
-         border-color: red;
-      }
    }
    &__button {
       margin-top: rem(30);
