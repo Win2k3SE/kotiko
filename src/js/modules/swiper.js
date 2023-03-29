@@ -12,6 +12,7 @@ export function initSliders() {
             },
             observer: true,
             observeParents: true,
+            spaceBetween: 20,
          })
    )
 
