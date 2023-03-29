@@ -1,3 +1,6 @@
+import { mask } from "./modules/inputmask.js"
+mask()
+
 import * as functions from "./modules/functions.js"
 
 functions.isWebp()
