@@ -30,8 +30,6 @@ function resizeMap(e) {
 window.addEventListener("resize", resizeMap)
 document.addEventListener("DOMContentLoaded", resizeMap)
 
-import "./modules/datepicker.js"
-
 import { createCustomSelectEl } from "./modules/dynamic-select.js"
 document.querySelectorAll(".dynamic-select").forEach((el) => createCustomSelectEl(el))
 
