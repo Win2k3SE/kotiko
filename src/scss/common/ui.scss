@@ -87,13 +87,14 @@ th {
       &::before {
          content: "";
          position: absolute;
-         outline: 2px solid rgba(#ffee00, 0.5);
+         outline: 2px solid rgba($mainPink, 0.5);
          border-radius: 10px;
          top: 0px;
-         left: -10px;
+         left: -20px;
          bottom: 0px;
-         right: -10px;
+         right: -20px;
          pointer-events: none;
+         outline-offset: -7px;
       }
    }
 }
