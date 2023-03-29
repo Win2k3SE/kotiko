@@ -1,15 +1,11 @@
 import Swiper, { Navigation, Pagination, Controller, Thumbs } from "swiper"
 
 function buildSliders(enableZoom = false) {
-   document
-      .querySelectorAll('[class*="__swiper"]:not(.swiper-wrapper)')
-      .forEach((slider) => {
-         slider.parentElement.classList.add("swiper")
-         slider.classList.add("swiper-wrapper")
-         Array.prototype.forEach.call(slider.children, (el) =>
-            el.classList.add("swiper-slide")
-         )
-      })
+   document.querySelectorAll('[class*="__swiper"]:not(.swiper-wrapper)').forEach((slider) => {
+      slider.parentElement.classList.add("swiper")
+      slider.classList.add("swiper-wrapper")
+      Array.prototype.forEach.call(slider.children, (el) => el.classList.add("swiper-slide"))
+   })
 }
 
 const mainSwiperOptions = {
@@ -26,25 +22,18 @@ const mainSwiperOptions = {
    spaceBetween: 30,
    on: {
       init: function () {
-         slideCountEl = document.querySelector(
-            ".main-block__pagination-last-page-num"
-         )
+         slideCountEl = document.querySelector(".main-block__pagination-last-page-num")
          changePageIndex(this)
       },
       slideChange: function () {
          changePageIndex(this)
          document
             .querySelectorAll(".swiper-pagination-bullet")
-            .forEach((el) =>
-               el.classList.remove("swiper-pagination-bullet-active")
-            )
+            .forEach((el) => el.classList.remove("swiper-pagination-bullet-active"))
          const activeSlide = document.querySelector(
-            ".swiper-pagination-bullet:nth-of-type(" +
-               (this.realIndex + 1) +
-               ")"
+            ".swiper-pagination-bullet:nth-of-type(" + (this.realIndex + 1) + ")"
          )
-         if (activeSlide)
-            activeSlide.classList.add("swiper-pagination-bullet-active")
+         if (activeSlide) activeSlide.classList.add("swiper-pagination-bullet-active")
       },
    },
    loop: true,
@@ -163,6 +152,4 @@ export function initSliders() {
    moveControls()
    window.addEventListener("resize", moveControls)
 }
-// document.addEventListener("DOMContentLoaded", function () {
-//   initSliders();
-// });
+initSliders()
