@@ -48,6 +48,7 @@
    // .cctv__text
    &__main-text {
       grid-column: span 3;
+      height: 5rem;
    }
    // .cctv__suits
    &__suits {
@@ -66,7 +67,7 @@
       justify-content: space-between;
       grid-template: auto/repeat(auto-fill, rem(140));
       // gap: rem(55) rem(36);
-      clear: rem(36);
+      column-gap: rem(36);
       // outline: 1px solid blueviolet;
       @media (max-width: 767px) {
          // gap: rem(25) rem(26);
@@ -82,6 +83,7 @@
    }
    &__suits {
       // margin-bottom: rem(25);
+      max-width: calc(100% - 14px); // negative right offset of suit image
    }
    &__additional-suits {
       // margin-top: rem(25);
@@ -110,6 +112,7 @@
          // gap: rem(25) rem(26);
          margin-bottom: rem(25);
       }
+      user-select: none;
       @include flex-center;
       width: rem(140);
       height: rem(140);
