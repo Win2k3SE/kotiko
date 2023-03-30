@@ -101,6 +101,10 @@ th {
 ::selection {
    background-color: rgba($mainPink, 0.5);
 }
+.swiper-slide {
+   user-select: none;
+   cursor: grab;
+}
 ._error-list {
    margin-top: rem(5);
    color: red;
