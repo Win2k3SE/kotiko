@@ -65,7 +65,7 @@
          }
          .option:not([data-value=""]) {
             &:hover {
-               background-color: rgba(#ffee00, 0.2);
+               background-color: rgba($mainPink, 0.2);
             }
          }
       }
@@ -74,7 +74,7 @@
          cursor: pointer;
          &[data-selected] {
             background-color: $mainPink;
-            background-color: rgba(#ffee00, 0.4);
+            background-color: rgba($mainPink, 0.4);
          }
          &[data-value=""] {
             opacity: 0.5;

@@ -99,7 +99,7 @@ th {
    }
 }
 ::selection {
-   background-color: $mainPink;
+   background-color: rgba($mainPink, 0.5);
 }
 ._error-list {
    margin-top: rem(5);
