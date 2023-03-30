@@ -1,11 +1,10 @@
-import Swiper, { Navigation, Pagination, Controller, Thumbs } from "swiper"
+import Swiper, { Navigation, Pagination, Controller } from "swiper"
 
 export function initSliders() {
    document.querySelectorAll(".suit__slider").forEach(
       (slide) =>
          new Swiper(slide, {
             modules: [Navigation, Pagination, Controller],
-            allowTouchMove: true,
             navigation: {
                nextEl: ".suit__slider .swiper-button-next",
                prevEl: ".suit__slider .swiper-button-prev",
@@ -21,11 +20,11 @@ export function initSliders() {
    if (mainSlider && thumbsSlider) {
       const thumbs = new Swiper(thumbsSlider, {
          modules: [Navigation, Pagination, Controller],
-         allowTouchMove: true,
-         slidesPerView: 2,
-         slidesPerGroup: 1,
+         loop: true,
+         // loopedSlides: 2, // breaks things
          spaceBetween: 30,
          direction: "horizontal",
+         slideToClickedSlide: true,
          breakpoints: {
             320: {
                direction: "horizontal",
@@ -43,14 +42,12 @@ export function initSliders() {
          observeParents: true,
       })
       const mainOptions = {
-         modules: [Thumbs, Navigation, Pagination, Controller],
-         // allowTouchMove: true,
+         modules: [Navigation, Pagination, Controller],
          observer: true,
          observeParents: true,
          resizeObserver: true,
          updateOnWindowResize: true,
          loop: true,
-         slidesPerView: "auto",
          spaceBetween: 20,
          navigation: {
             nextEl: ".gallery .swiper-button-next",
@@ -60,16 +57,10 @@ export function initSliders() {
             type: "fraction",
             el: ".gallery .swiper-pagination",
          },
-         thumbs: {
-            swiper: thumbs,
-         },
-         breakpoints: {
-            870: {
-               //  slidesPerView: 1,
-            },
-         },
       }
       let main = new Swiper(mainSlider, mainOptions)
+      main.controller.control = thumbs
+      thumbs.controller.control = main
    }
    const header = document.querySelector(".gallery__header")
    const navigation = document.querySelector(".swiper-navigation")
