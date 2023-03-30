@@ -11,16 +11,16 @@
                 <form class="order-form__form">
                     <div class="order-form__row order-form__row--two-inputs">
                         <div class="order-form__column">
-                            <div class="order-form__field">
-                                <input type="text" tabindex="1" name="client-name" class="order-form__input"
+                            <div class="form-field">
+                                <input type="text" tabindex="1" name="client-name" class="form-input"
                                     data-min-length="5" placeholder="Имя" aria-required="true">
                             </div>
                             <ul class="_error-list"></ul>
                         </div>
                         <div class="order-form__column">
-                            <div class="order-form__field">
+                            <div class="form-field">
                                 <input type="text" tabindex="2" name="start-date"
-                                    class="order-form__input order-form__start-date" placeholder="Дата заезда"
+                                    class="form-input order-form__start-date" placeholder="Дата заезда"
                                     aria-required="true" spellcheck="false">
                             </div>
                             <ul class="_error-list"></ul>
@@ -28,17 +28,17 @@
                     </div>
                     <div class="order-form__row order-form__row--two-inputs">
                         <div class="order-form__column">
-                            <div class="order-form__field">
+                            <div class="form-field">
                                 <input type="tel" autocomplete="off" data-rule="tel" data-min-length="6"
-                                    data-max-length="24" tabindex="3" name="phone" class="order-form__input"
+                                    data-max-length="24" tabindex="3" name="phone" class="form-input"
                                     aria-required="true" placeholder="Телефон">
                             </div>
                             <ul class="_error-list"></ul>
                         </div>
                         <div class="order-form__column">
-                            <div class="order-form__field">
+                            <div class="form-field">
                                 <input type="text" tabindex="4" name="end-date"
-                                    class="order-form__input order-form__end-date" aria-required="true"
+                                    class="form-input order-form__end-date" aria-required="true"
                                     placeholder="Дата выезда" spellcheck="false">
                             </div>
                             <ul class="_error-list"></ul>
@@ -46,31 +46,31 @@
                     </div>
                     <div class="order-form__row order-form__row--two-inputs">
                         <div class="order-form__column">
-                            <div class="order-form__field">
+                            <div class="form-field">
                                 <input type="text" tabindex="5" data-max-length="30" name="pet-name"
-                                    class="order-form__input" placeholder="Кличка животного">
+                                    class="form-input" placeholder="Кличка животного">
                             </div>
                             <ul class="_error-list"></ul>
                         </div>
                         <div class="order-form__column">
-                            <div class="order-form__field">
+                            <div class="form-field">
                                 <div class="dynamic-select">
                                     <select tabindex="6" name="suite-type" type="hidden" aria-required="true"
-                                        class="order-form__input" id="suite-type">
+                                        class="form-input" id="suite-type">
                                         <option value="">Тип номера</option>
                                         <option value="suit-1">Стандарт</option>
                                         <option value="suit-2">Стандарт+</option>
                                         <option value="suite-3">Люкс</option>
                                     </select>
-                                    <ul class="_error-list"></ul>
-                                </div>
-                            </div>
-                        </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <ul class="_error-list"></ul>
                     </div>
                     <div class="order-form__row">
                         <div class="order-form__column">
-                            <div class="order-form__field">
-                                <textarea name="comment" tabindex="7" class="order-form__input order-form__comment"
+                            <div class="form-field">
+                                <textarea name="comment" tabindex="7" class="form-input order-form__comment"
                                     placeholder="Примечание"></textarea>
                             </div>
                             <ul class="_error-list"></ul>

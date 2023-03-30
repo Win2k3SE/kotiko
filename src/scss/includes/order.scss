@@ -86,12 +86,8 @@
    &__row {
       display: flex;
       flex-wrap: wrap;
-      row-gap: rem(39 - 17 * 2 - 5 - 7);
       .order-form__column {
          flex-basis: 100%;
-      }
-      input {
-         flex: 0 0 100%;
       }
       &:not(:last-child) {
          margin-bottom: rem(39 - 17 * 2 - 5 - 7);
@@ -104,26 +100,11 @@
             }
          }
          column-gap: rem(40);
-         input {
-            flex: auto;
-         }
          @media (max-width: 609px) {
          }
       }
       &--button {
          @include avalue("margin-top", 70, 50);
-      }
-   }
-
-   &__field {
-   }
-   // .order-form__input
-   &__input {
-      border-bottom: 1px solid $mainTextColor;
-      padding: rem(12) 0;
-      width: 100%;
-      &::placeholder {
-         color: $mainGray;
       }
    }
    &__comment {

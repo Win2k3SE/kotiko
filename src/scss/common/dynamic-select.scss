@@ -54,13 +54,11 @@
          }
       }
       .options {
-         width: 110%;
-         margin-left: -5%;
+         width: 100%;
          margin-top: rem(12);
-         padding: 7px 0;
+         padding: rem(7) 0;
          background: $mainYellow;
-         border: 1px solid #bdbdbd;
-         border-radius: 3px;
+         outline: 1px solid $mainTextColor;
          @include afont(16, 12);
          .option {
             padding: rem(12) 5%;
