@@ -47,7 +47,7 @@ export function validate() {
 }
 async function validateForm(form) {
    const errorListClassName = "_error-list"
-   const fields = form.querySelectorAll("[class*=__input]")
+   const fields = form.querySelectorAll(".form-input")
    for (const field of fields) {
       const errorList = field.parentElement.parentElement.querySelector(`.${errorListClassName}`)
       if (errorList) {
@@ -58,7 +58,7 @@ async function validateForm(form) {
    }
    await new Promise((resolve) => setTimeout(resolve, 300))
    for (const field of fields) {
-      const errorList = field.parentElement.parentElement.querySelector(`.${errorListClassName}`)
+      const errorList = field.closest('.order-form__column').querySelector(`.${errorListClassName}`)
       const messages = isFieldValid(field)
       if (messages) {
          field.setAttribute("aria-invalid", true)
