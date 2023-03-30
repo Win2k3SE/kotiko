@@ -192,3 +192,20 @@ br.responsive {
 .rub:after {
    content: "\u20BD";
 }
+.swal2-container {
+   color: $mainTextColor !important;
+   .swal2-styled.swal2-confirm {
+       @extend .button;
+       min-width: 150px;
+       padding: rem(10);
+       &:focus {
+         box-shadow: none;
+       }
+   }
+   .swal2-icon.swal2-success .swal2-success-ring {
+       border-color: $mainPink;
+   }
+   .swal2-icon.swal2-success [class^="swal2-success-line"] {
+       background-color: $mainPink;
+   }
+}

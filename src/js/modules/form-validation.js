@@ -1,3 +1,5 @@
+import Swal from "sweetalert2"
+
 const rules = {
    text: function (node) {
       const isRequired = node.getAttribute("aria-required") || node.required
@@ -46,6 +48,7 @@ export function validate() {
    })
 }
 async function validateForm(form) {
+   let isFormValid = true
    const errorListClassName = "_error-list"
    const fields = form.querySelectorAll(".form-input")
    for (const field of fields) {
@@ -65,6 +68,7 @@ async function validateForm(form) {
       const errorList = parent.querySelector(`.${errorListClassName}`)
       const messages = isFieldValid(field)
       if (messages) {
+         isFormValid = false
          field.setAttribute("aria-invalid", true)
          errorList.classList.add(`${errorListClassName}--visible`)
          for (const message of messages) {
@@ -74,6 +78,9 @@ async function validateForm(form) {
             errorList.append(li)
          }
       }
+   }
+   if(isFormValid) {
+      Swal.fire("Спасибо!", "Мы скоро свяжемся с вами", "success")
    }
 }
 function isFieldValid(field) {
