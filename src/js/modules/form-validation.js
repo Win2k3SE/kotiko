@@ -49,7 +49,9 @@ async function validateForm(form) {
    const errorListClassName = "_error-list"
    const fields = form.querySelectorAll(".form-input")
    for (const field of fields) {
-      const errorList = field.parentElement.parentElement.querySelector(`.${errorListClassName}`)
+      const parent = field.closest('.order-form__column') || field.closest('.main__row')
+      if(!parent) continue
+      const errorList = parent.querySelector(`.${errorListClassName}`)
       if (errorList) {
          errorList.classList.remove(`${errorListClassName}--visible`)
          Array.prototype.forEach.call(errorList.children, (child) => child.remove())
@@ -58,7 +60,9 @@ async function validateForm(form) {
    }
    await new Promise((resolve) => setTimeout(resolve, 300))
    for (const field of fields) {
-      const errorList = field.closest('.order-form__column').querySelector(`.${errorListClassName}`)
+      const parent = field.closest('.order-form__column') || field.closest('.main__row')
+      if(!parent) continue 
+      const errorList = parent.querySelector(`.${errorListClassName}`)
       const messages = isFieldValid(field)
       if (messages) {
          field.setAttribute("aria-invalid", true)
