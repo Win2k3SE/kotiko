@@ -15,7 +15,7 @@ export function togglePlaceholderOnFocus() {
 export function markRequiredFields() {
    const mark = " *"
    function markDynamicSelects() {
-      for (const field of document.querySelectorAll("[class*=__input]")) {
+      for (const field of document.querySelectorAll(".form-input")) {
          if (field.required || field.getAttribute("aria-required")) {
             if (field.matches(".select-shadow-wrapper")) {
                const selected = field.querySelector(".selected-option")
@@ -25,7 +25,7 @@ export function markRequiredFields() {
       }
    }
    function doMark() {
-      for (const field of document.querySelectorAll("[class*=__input]")) {
+      for (const field of document.querySelectorAll(".form-input")) {
          if (field.required || field.getAttribute("aria-required")) {
             if (field.placeholder) field.placeholder += mark
             else if (field.matches(".select-shadow-wrapper")) {
