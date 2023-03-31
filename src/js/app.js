@@ -36,9 +36,8 @@ document.addEventListener("DOMContentLoaded", resizeMap)
 import { createCustomSelectEl } from "./modules/dynamic-select.js"
 document.querySelectorAll(".dynamic-select").forEach((el) => createCustomSelectEl(el))
 
-import { markRequiredFields, togglePlaceholderOnFocus } from "./modules/inputs.js"
+import { togglePlaceholderOnFocus } from "./modules/inputs.js"
 togglePlaceholderOnFocus()
-markRequiredFields()
 
 import { validate } from "./modules/form-validation.js"
 validate()

@@ -9,17 +9,6 @@ export function mask() {
 
    const phones = document.querySelectorAll("[name=phone]")
    for (const phone of phones) {
-      const mask = Inputmask.default(maskOptions)
-      phone.addEventListener("focusin", (e) => {
-         if (e.target.value === "") {
-            mask.mask(e.target)
-         }
-      })
-      phone.addEventListener("focusout", (e) => {
-         if (e.target.value === "") {
-            e.target.placeholder = "Телефон"
-            mask.remove()
-         }
-      })
+      Inputmask.default(maskOptions).mask(phone)
    }
 }
