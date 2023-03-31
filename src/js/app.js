@@ -1,3 +1,6 @@
+import {paw} from './modules/paw.js'
+paw()
+
 import { mask } from "./modules/inputmask.js"
 mask()
 
@@ -41,3 +44,37 @@ togglePlaceholderOnFocus()
 
 import { validate } from "./modules/form-validation.js"
 validate()
+
+function burger() {
+   const popup = document.querySelector('.popup')
+   if(window.innerWidth <= 600) {
+      popup.classList.add('popup--open')
+      document.body.classList.add('_lock')
+   } else {
+      closePopup(popup)
+   }
+   popup.addEventListener('click', e => {
+      const link = e.target.closest('.fs-menu__link')
+      if(link) {
+         closePopup(popup)
+      } else {
+         const closeButton = e.target.closest('.popup-close-button')
+         if(closeButton) closePopup(popup)
+      }
+   })
+   document.body.addEventListener('click', e => {
+      if(e.target.matches(".popup--open")) {
+         closePopup(popup)
+      }
+   })
+}
+function closePopup(popup) {
+   popup.classList.remove('popup--open')
+   document.body.classList.remove('_lock')
+}
+const burgerButton = document.querySelector('.burger')
+burgerButton.addEventListener('click', burger)
+
+// document.addEventListener('DOMContentLoaded', burger)
+// window.addEventListener('resize', debounce(burger))
+

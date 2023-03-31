@@ -121,9 +121,6 @@
          }
       }
       &--large {
-         @media (max-width: 1100px) {
-            display: none;
-         }
       }
    }
   
@@ -222,11 +219,6 @@
    }
 }
 .fs-menu__paw--small {
-   display: none;
-   @media (max-width: 1100px) {
-      display: block;
-   }
-
    .first-line {
       font-size: 15px;
       font-weight: 600;
