@@ -152,7 +152,7 @@ th {
    color: #fff;
    background-color: $mainPink;
    border-radius: em(100, 20);
-   transition: background-color 0.2s;
+   transition: background-color 0.2s, color .2s;
    @media (any-hover: hover) {
       &:hover {
          color: $mainPink;

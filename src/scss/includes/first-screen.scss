@@ -103,13 +103,12 @@
       height: 100%;
       top: 0;
       left: 0;
+      user-select: none;
 
       path {
          cursor: pointer;
-      }
-      a {
+         transition: fill .2s;
          fill: $mainGreen;
-         z-index: 10;
       }
       text {
          pointer-events: none;
@@ -159,13 +158,15 @@
          font-weight: 600;
       }
       &-suits {
-         position: absolute;
          top: pc(138, 379);
          left: 0%;
          // transform: rotate(-28.84deg);
          border-radius: rem(70);
          a {
             // padding: rem(44) rem(12);
+         }
+         text {
+            transform: rotate(-28.84 10 212);
          }
       }
       &-order {
@@ -199,7 +200,7 @@
       }
       &-payment {
          .first-line {
-            font-size: rem(17);
+            font-size: rem(22);
             line-height: math.div(20, 17);
          }
          top: pc(88, 379);
@@ -254,7 +255,7 @@
       .second-line,
       .third-line,
       .fourth-line {
-         font-size: 13px;
+         font-size: 12px;
       }
    }
    .fs-menu__item-video {
@@ -265,7 +266,10 @@
    }
    .fs-menu__item-payment {
       .first-line {
-         font-size: 14px;
+         font-size: 16px;
+      }
+      .second-line {
+         font-size: 10px;
       }
    }
    .fs-menu__item-about {

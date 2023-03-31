@@ -33,10 +33,11 @@
       font-weight: 600;
       position: relative;
       padding: rem(20) rem(90) rem(20) rem(30);
-      background-color: rgba(250, 247, 245, 0.4);
+      background-color: rgb(250, 244, 240);
+      transition: background-color .2s;
       @media (any-hover: hover) {
          &:hover {
-            background-color: rgba(250, 247, 245, 0.8);
+            background-color: rgb(248, 240, 235);
          }
       }
       @media (max-width: 767.98px) {
