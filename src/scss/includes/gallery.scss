@@ -164,6 +164,8 @@
       //   flex: 0 0 rem(480);
       flex: 0 0 100%;
       position: relative;
+      background-color: rgba(#f6a6bf, .05);
+      @include flex-center;
       //   padding-bottom: pc(532, 480);
       @media (max-width: 320px) {
          //  width: rem(240);
@@ -177,12 +179,12 @@
          }
       }
       img {
-         //  position: absolute;
-         top: 0;
-         left: 0;
          max-width: 100%;
          height: 100%;
          object-fit: cover;
+         &.loading {
+            @include size(80);
+         }
       }
    }
 }
@@ -229,17 +231,19 @@
       // flex: 0 0 calc(50% - 15px);
       position: relative;
       border: 5px solid transparent;
+      @include flex-center;
+      background-color: rgba(#f6a6bf, .05);
       @media (min-width: 840px) and (max-width: 1200px) {
          width: rem(330);
          flex: 0 0 340px;
       }
       img {
-         // position: absolute;
-         top: 0;
-         left: 0;
          width: 100%;
          height: 100%;
          object-fit: cover;
+         &.loading {
+            @include size(40);
+         }
       }
    }
    .swiper-slide-thumb-active {
