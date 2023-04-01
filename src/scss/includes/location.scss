@@ -62,12 +62,7 @@
          margin-left: -15px;
          width: calc(100% + 30px);
       }
-      @media (max-width: 480px) {
-         height: rem(300);
-      }
-      @media (max-width: 320px) {
-         height: rem(200);
-      }
+
    }
    // .location__directions
    &__directions {
