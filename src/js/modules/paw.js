@@ -53,7 +53,7 @@ const smallPaw = `
 <svg class="fs-menu__paw fs-menu__paw--small" width="300" height="298" viewBox="0 0 300 298"
 fill="none" xmlns="http://www.w3.org/2000/svg">
 <!-- 1st finger -->
-<a xlink:href="#" class="fs-menu__item fs-menu__item--first">
+<a xlink:href="#suits" class="fs-menu__item fs-menu__item--first">
     <path fill-rule="evenodd" clip-rule="evenodd"
         d="M78.4303 140.824C90.5963 167.152 83.0994 198.642 64.9151 206.984C46.7309 215.327 17.7048 204.36 5.53816 178.031C-6.62851 151.701 2.6721 119.98 20.8563 111.638C39.0406 103.296 66.2636 114.494 78.4303 140.824Z"
         fill="#28AFC9"></path>
@@ -63,7 +63,7 @@ fill="none" xmlns="http://www.w3.org/2000/svg">
     </text>
 </a>
 <!-- 2nd finger -->
-<a xlink:href="#" class="fs-menu__item fs-menu__item--second">
+<a xlink:href="#order" class="fs-menu__item fs-menu__item--second">
     <path fill-rule="evenodd" clip-rule="evenodd"
         d="M107.141 119.131C88.0375 125.09 61.2575 112.332 52.5594 84.6696C43.8612 57.0076 56.5388 24.9161 75.6412 18.9567C94.7442 12.9973 120.312 25.7551 129.01 53.4171C137.708 81.0797 126.244 113.171 107.141 119.131Z"
         fill="#28AFC9"></path>
@@ -75,7 +75,7 @@ fill="none" xmlns="http://www.w3.org/2000/svg">
     </text>
 </a>
 <!-- 3rd finger -->
-<a xlink:href="#" class="fs-menu__item fs-menu__item--third">
+<a xlink:href="#cctv" class="fs-menu__item fs-menu__item--third">
     <path fill-rule="evenodd" clip-rule="evenodd"
         d="M186.305 104.996C166.324 106.205 142.627 83.7309 140.853 54.7983C139.079 25.8663 159.901 1.43211 179.882 0.223788C199.864 -0.985136 223.561 21.4894 225.335 50.422C227.109 79.354 206.287 103.788 186.305 104.996Z"
         fill="#28AFC9"></path>
@@ -87,7 +87,7 @@ fill="none" xmlns="http://www.w3.org/2000/svg">
 </a>
 
 <!-- 4th finger -->
-<a xlink:href="#" class="fs-menu__item fs-menu__item--fourth">
+<a xlink:href="#location" class="fs-menu__item fs-menu__item--fourth">
     <path fill-rule="evenodd" clip-rule="evenodd"
         d="M299.393 123.914C296.827 152.785 271.679 174.547 251.738 172.778C231.796 171.009 211.651 146.171 214.217 117.299C216.784 88.4276 241.09 66.4565 261.031 68.2258C280.973 69.9945 301.96 95.0428 299.393 123.914Z"
         fill="#28AFC9"></path>
@@ -96,7 +96,7 @@ fill="none" xmlns="http://www.w3.org/2000/svg">
       <tspan x="248" y="72" class="second-line">и контакты</tspan>
     </text>
 </a>
-<a xlink:href="#" class="fs-menu__item fs-menu__item--fith">
+<a xlink:href="#about-us" class="fs-menu__item fs-menu__item--fith">
     <path fill-rule="evenodd" clip-rule="evenodd"
         d="M101.998 193.887C129.251 113.054 166.638 108.083 212.424 165.989C217.707 172.671 224.075 178.464 231.458 182.733C289.921 216.535 279.465 271.927 232.19 273.683C226.53 273.893 220.893 273.037 215.408 271.627C196.7 266.818 178.505 268.083 161.196 279.822C101.507 329.837 41.3085 263.517 91.2139 211.97C96.1569 206.865 99.7303 200.613 101.998 193.887Z"
         fill="#28AFC9" />
