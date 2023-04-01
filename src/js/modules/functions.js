@@ -88,3 +88,7 @@ export function debounce(func, timeout = 200) {
        timer = setTimeout(() => func.apply(this, args), timeout)
    }
 }
+export function getOffsetFromTop(el) {
+   if(!el) return 0
+   return el.offsetTop + getOffsetFromTop(el.offsetParent)
+}
