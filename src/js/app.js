@@ -1,6 +1,3 @@
-import {paw} from './modules/paw.js'
-paw()
-
 import {burger} from './modules/burger.js'
 burger()
 
@@ -30,3 +27,8 @@ togglePlaceholderOnFocus()
 import { validate } from "./modules/form-validation.js"
 validate()
 
+for(const el of document.querySelectorAll('[data-clipboard]')) {
+   el.addEventListener('click', () => {
+      navigator.clipboard.writeText(el.getAttribute('data-clipboard'))
+   })
+}
