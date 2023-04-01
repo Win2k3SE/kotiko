@@ -58,6 +58,10 @@
       &:not(:last-child) {
          @include avalue("margin-bottom", 70, 30);
       }
+      @media (max-width: 768px) {
+         margin-left: -15px;
+         width: calc(100% + 30px);
+      }
       @media (max-width: 480px) {
          height: rem(300);
       }
