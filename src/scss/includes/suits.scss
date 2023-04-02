@@ -8,9 +8,9 @@
     display: flex;
     justify-content: space-between;
     row-gap: rem(50);
-    height: 200px;
     align-items: center;
     margin-bottom: rem(35);
+    margin-bottom: 50px;
 
     @media (max-width: 600 + px) {
       flex-wrap: wrap;
@@ -21,13 +21,13 @@
   // .suits__title
   &__title {
     margin-bottom: 0;
+    flex: 0 0 33.3333%;
   }
-  // .suits__special-offer
   &__special-offer {
-    width: 280px;
-    height: 200px;
-    @include aminvalue("margin-right", 260, 0, 900);
+    @include flex-center;
+    flex-grow: 1;
   }
+
   // .suits__body
   &__body {
     display: grid;
