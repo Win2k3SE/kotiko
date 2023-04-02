@@ -209,3 +209,21 @@ br.responsive {
        background-color: $mainPink;
    }
 }
+.copy-success {
+   animation: buttonPress 300ms 1;
+   @keyframes buttonPress {
+      0% {
+         text-shadow: 0 0 0 $mainPink;
+         color: inherit;
+      }
+      50% {
+         color: $mainPink;
+         text-shadow: 0 1px 10px $mainPink;
+      }
+      0% {
+         text-shadow: 0 0 0 $mainPink;
+         color: inherit;
+      }
+   }
+}
+   
