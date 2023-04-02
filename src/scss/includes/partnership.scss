@@ -75,11 +75,8 @@
       position: relative;
       &::before {
          content: "";
-         position: absolute;
-         top: 50%;
-         background: no-repeat center url(../../img/partnership/paw.svg);
-         left: 50%;
-         transform: translate(-50%, -50%);
+         @include abs-center;
+         background: no-repeat center url(../../img/partnership/partnership-paw.svg);
          width: rem(193);
          height: rem(157);
          opacity: 0.075;
