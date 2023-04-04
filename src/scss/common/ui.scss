@@ -10,7 +10,6 @@ textarea {
    background-color: inherit;
    font-size: inherit;
    line-height: inherit;
-   font-weight: inherit;
    &::placeholder {
       font-size: inherit;
    }
@@ -213,4 +212,26 @@ br.responsive {
       }
    }
 }
-   
+.choices {
+   & &__inner {
+      background-color: inherit;
+      border: none;
+      color: inherit;
+      font-size: inherit;
+      border-width: 1px;
+   }
+   & &__placeholder {
+         color: $mainGray;
+         opacity: 1;
+      }
+      .choices__list--dropdown .choices__item, .choices__list[aria-expanded] .choices__item {
+         font-size: inherit;
+      }
+      .choices__item.choices__item--choice.is-selected.choices__item--selectable.is-highlighted {
+         background-color: rgba($mainPink, .3);
+      }
+   & .choices__list--dropdown.is-active, & .choices__list[aria-expanded].is-active {
+      border: none;
+      outline: 1px solid ;
+   }
+}
