@@ -28,6 +28,16 @@
     <script src="js/app.min.js"></script>
     <script defer src="js/swiper.min.js"></script>
     <script defer src="js/datepicker.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+    <script>for (const select of document.querySelectorAll("select")) {
+      new Choices(select, {
+          searchEnabled: false,
+          itemSelectText: "",
+          shouldSort: false,
+          allowHTML: false,
+      })
+  }
+  </script>
 </body>
 
 </html>

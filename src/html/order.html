@@ -12,14 +12,14 @@
                     <div class="order-form__row order-form__row--two-inputs">
                         <div class="order-form__column">
                             <div class="form-field">
-                                <input type="text" tabindex="1" name="client-name" class="form-input"
+                                <input type="text" name="client-name" class="form-input"
                                     data-min-length="5" placeholder="Имя *" aria-required="true">
                             </div>
                             <ul class="_error-list"></ul>
                         </div>
                         <div class="order-form__column">
                             <div class="form-field">
-                                <input type="text" tabindex="2" name="start-date"
+                                <input type="text" name="start-date"
                                     class="form-input order-form__start-date" placeholder="Дата заезда *"
                                     aria-required="true" spellcheck="false">
                             </div>
@@ -30,14 +30,14 @@
                         <div class="order-form__column">
                             <div class="form-field">
                                 <input type="tel" autocomplete="off" data-rule="tel" data-min-length="6"
-                                    data-max-length="24" tabindex="3" name="phone" class="form-input"
+                                    data-max-length="24" name="phone" class="form-input"
                                     aria-required="true" placeholder="Телефон *">
                             </div>
                             <ul class="_error-list"></ul>
                         </div>
                         <div class="order-form__column">
                             <div class="form-field">
-                                <input type="text" tabindex="4" name="end-date"
+                                <input type="text" name="end-date"
                                     class="form-input order-form__end-date"
                                     placeholder="Дата выезда" spellcheck="false">
                             </div>
@@ -47,21 +47,19 @@
                     <div class="order-form__row order-form__row--two-inputs">
                         <div class="order-form__column">
                             <div class="form-field">
-                                <input type="text" tabindex="5" data-max-length="30" name="pet-name"
+                                <input type="text" data-max-length="30" name="pet-name"
                                     class="form-input" placeholder="Кличка животного">
                             </div>
                             <ul class="_error-list"></ul>
                         </div>
                         <div class="order-form__column">
                             <div class="form-field">
-                                <div class="dynamic-select">
-                                    <select tabindex="6" name="suite-type" type="hidden" title="Тип номера" aria-required="true" class="form-input" id="suite-type">
-                                        <option value="">Тип номера *</option>
-                                        <option value="suit-1">Стандарт</option>
-                                        <option value="suit-2">Стандарт+</option>
-                                        <option value="suit-3">Люкс</option>
-                                    </select>
-                                 </div>
+                                 <select name="suite-type" type="hidden" title="Тип номера" aria-required="true" class="form-input" id="suite-type">
+                                       <option value="">Тип номера *</option>
+                                       <option value="suit-1">Стандарт</option>
+                                       <option value="suit-2">Стандарт+</option>
+                                       <option value="suit-3">Люкс</option>
+                                 </select>
                               </div>
                               <ul class="_error-list"></ul>
                            </div>
@@ -69,7 +67,7 @@
                     <div class="order-form__row">
                         <div class="order-form__column">
                             <div class="form-field">
-                                <textarea name="comment" tabindex="7" class="form-input order-form__comment"
+                                <textarea name="comment" class="form-input order-form__comment"
                                     placeholder="Примечание"></textarea>
                             </div>
                             <ul class="_error-list"></ul>

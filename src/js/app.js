@@ -18,9 +18,6 @@ hideAndToggle()
 import { initSpoilers } from "./modules/spoiler.js"
 document.addEventListener("DOMContentLoaded", initSpoilers)
 
-import { createCustomSelectEl } from "./modules/dynamic-select.js"
-document.querySelectorAll(".dynamic-select").forEach((el) => createCustomSelectEl(el))
-
 import { togglePlaceholderOnFocus } from "./modules/inputs.js"
 togglePlaceholderOnFocus()
 
