@@ -20,21 +20,6 @@
     &--is-fading-out {
         animation: fadeOut 0.5s;
     }
-    &-form {
-        padding-top: 0px;
-        padding-top: 0px;
-        // @include avalue("padding-right", 105, 0);
-        // @include avalue("padding-left", 90, 0);
-    }
-    &-form--error {
-        input {
-            border-color: red !important;
-        }
-        .input-error-list {
-            visibility: visible !important;
-            height: 30px;
-        }
-    }
     &-header {
         position: relative;
         display: flex;
