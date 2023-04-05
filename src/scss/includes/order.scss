@@ -72,6 +72,9 @@
          flex: 0 0 100%;
       }
    }
+   .form-field {
+      background: $mainYellow;
+   }
 }
 .order-form {
    // .order-form__form
@@ -119,12 +122,5 @@
          width: 100%;
       }
    }
-   .select-shadow-wrapper {
-      .selected-option {
-         &[data-value=""] {
-            color: $mainGray;
-            opacity: 1;
-         }
-      }
-   }
+
 }

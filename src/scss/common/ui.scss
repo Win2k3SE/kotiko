@@ -5,7 +5,9 @@ button {
    color: inherit;
 }
 input,
-textarea {
+textarea,
+select,
+option {
    font-weight: inherit;
    background-color: inherit;
    font-size: inherit;
@@ -233,5 +235,7 @@ br.responsive {
    & .choices__list--dropdown.is-active, & .choices__list[aria-expanded].is-active {
       border: none;
       outline: 1px solid ;
+      border-radius: 0;
    }
+   
 }
