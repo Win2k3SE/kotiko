@@ -14,11 +14,12 @@ export function initSliders() {
             spaceBetween: 20,
          })
    )
-
-   const mainSlider = document.querySelector(".main-slider")
+   
+   const mainSliderSelector = ".main-slider"
+   const mainSlider = document.querySelector(mainSliderSelector)
    const thumbsSlider = document.querySelector(".thumbs-slider")
    if (mainSlider && thumbsSlider) {
-      const thumbs = new Swiper(thumbsSlider, {
+      const thumbsOptions =  {
          modules: [Navigation, Pagination, Controller],
          loop: true,
          // loopedSlides: 2, // breaks things
@@ -40,7 +41,16 @@ export function initSliders() {
          },
          observer: true,
          observeParents: true,
-      })
+         on: {
+            afterInit: (swiper) => {
+               new LazyLoad({
+                  container: swiper.el,
+                  elements_selector	: 'img',
+                  cancel_on_exit: false,
+               });
+            }
+         }
+      }
       const mainOptions = {
          modules: [Navigation, Pagination, Controller],
          observer: true,
@@ -57,10 +67,26 @@ export function initSliders() {
             type: "fraction",
             el: ".gallery .swiper-pagination",
          },
+         on: {
+            afterInit: (swiper) => {
+               new LazyLoad({
+                  container: swiper.el,
+                  elements_selector	: 'img',
+                  cancel_on_exit: false,
+               });
+            }
+         }
       }
-      let main = new Swiper(mainSlider, mainOptions)
-      main.controller.control = thumbs
-      thumbs.controller.control = main
+      new LazyLoad({
+         elements_selector: mainSliderSelector,
+         unobserve_entered: true,
+         callback_enter: function (swiperElement) {
+            const thumbs = new Swiper(thumbsSlider, thumbsOptions)
+            let main = new Swiper(mainSlider, mainOptions)
+            main.controller.control = thumbs
+            thumbs.controller.control = main
+         }
+       });
    }
    const header = document.querySelector(".gallery__header")
    const navigation = document.querySelector(".swiper-navigation")
