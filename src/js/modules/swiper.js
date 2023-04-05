@@ -1,18 +1,36 @@
 import Swiper, { Navigation, Pagination, Controller } from "swiper"
 
+function initSuitSlider(slide){
+   new Swiper(slide, {
+      modules: [Navigation, Pagination, Controller],
+      navigation: {
+         nextEl: ".suit__slider .swiper-button-next",
+         prevEl: ".suit__slider .swiper-button-prev",
+      },
+      loop: true,
+      observer: true,
+      observeParents: true,
+      spaceBetween: 20,
+      on: {
+         afterInit: (swiper) => {
+            new LazyLoad({
+               container: swiper.el,
+               elements_selector	: 'img',
+               cancel_on_exit: false,
+            });
+         }
+      }
+   })
+}
 export function initSliders() {
    document.querySelectorAll(".suit__slider").forEach(
-      (slide) =>
-         new Swiper(slide, {
-            modules: [Navigation, Pagination, Controller],
-            navigation: {
-               nextEl: ".suit__slider .swiper-button-next",
-               prevEl: ".suit__slider .swiper-button-prev",
-            },
-            observer: true,
-            observeParents: true,
-            spaceBetween: 20,
-         })
+      (slide) => {
+         new LazyLoad({
+            elements_selector: '.suit__slider',
+            unobserve_entered: true,
+            callback_enter: () => initSuitSlider(slide)
+          });
+      }
    )
    
    const mainSliderSelector = ".main-slider"
