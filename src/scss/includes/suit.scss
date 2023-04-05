@@ -79,9 +79,13 @@
          width: 100%;
          max-height: 500px;
          object-fit: cover;
-         &.loading {
-            @include size(60);
-         }
+         position: relative;
+         z-index: 5;
+      }
+      .spinner {
+         @include abs-center;
+         @include size(80);
+         z-index: 0;
       }
    }
    &__form {
