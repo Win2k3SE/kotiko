@@ -28,15 +28,24 @@
     <script src="js/app.min.js"></script>
     <script defer src="js/swiper.min.js"></script>
     <script defer src="js/datepicker.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
-    <script>for (const select of document.querySelectorAll("select")) {
-      new Choices(select, {
-          searchEnabled: false,
-          itemSelectText: "",
-          shouldSort: false,
-          allowHTML: false,
-      })
-  }
+    <script>
+      function lazyLoadChoices(choicesSelector) {
+            const script = document.createElement('script')
+            document.body.append(script)
+            script.onload = () => {
+               new Choices(choicesSelector, {
+                  searchEnabled: false,
+                  itemSelectText: "",
+                  shouldSort: false,
+                  allowHTML: false,
+               })}
+            script.src = 'https://cdnjs.cloudflare.com/ajax/libs/choices.js/10.2.0/choices.min.js'
+            document.head.insertAdjacentHTML('beforeend', '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css">')
+      }
+      new LazyLoad({
+         elements_selector: '[name="suite-type"]',
+         unobserve_enered: true,
+         callback_enter: () => lazyLoadChoices('[name="suite-type"]')})
   </script>
 </body>
 
