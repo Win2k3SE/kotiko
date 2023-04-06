@@ -4,9 +4,9 @@ import { elementsToShow } from "./hider.js"
 
 let foo = () => {
    if (document.documentElement.offsetWidth > 767) {
-      addElements(".cctv-suits__suits", "cctv-suits__suit", 17 + 3)
+      addElements(".cctv-suites__suites", "cctv-suites__suit", 17 + 3)
    } else {
-      addElements(".cctv-suits__suits", "cctv-suits__suit", 17)
+      addElements(".cctv-suites__suites", "cctv-suites__suit", 17)
    }
 }
 export function hideAndToggle() {

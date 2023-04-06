@@ -1,4 +1,4 @@
-.suit {
+.suite {
    border: 1px solid rgba($mainPink, 0.5);
    height: 100%;
    min-width: 0;
@@ -14,7 +14,7 @@
       &:nth-of-type(2) {
          grid-area: right;
       }
-      &:nth-of-type(3) > .suit {
+      &:nth-of-type(3) > .suite {
          grid-template:
             "slider table" min-content
             "slider button" 1fr / 1fr 1fr;
@@ -22,12 +22,12 @@
       }
    }
    @media (max-width: 600 + px) {
-      &:last-of-type > .suit {
+      &:last-of-type > .suite {
          grid-template: "slider" "table" "button";
          column-gap: rem(30);
       }
    }
-   // .suit_slider
+   // .suite__slider
    &__slider {
       min-width: 0;
       max-width: 600px;
@@ -76,11 +76,11 @@
          opacity: 0.4;
       }
    }
-   // .suit_props
+   // .suite_props
    &_props {
       grid-area: table;
    }
-   // .suit__slide
+   // .suite__slide
    &__slide {
       min-width: 0;
       flex: 0 0 100%;
@@ -103,7 +103,7 @@
    &__form {
       grid-area: button;
    }
-   // .suit__button
+   // .suite__button
    &__button {
       margin: rem(20) rem(25) rem(30) rem(25);
       width: calc(100% - rem(25) * 2);

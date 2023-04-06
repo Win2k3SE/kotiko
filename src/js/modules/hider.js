@@ -2,12 +2,12 @@ import { addElements } from "./flexbox-empty-elements-inserter.js"
 import { getPropertyValue, slideUp, slideDown } from "./functions.js"
 
 let hidden = null
-const mainContainer = document.querySelector(".cctv-suits__suits")
-const additionalContainer = document.querySelector(".cctv-suits__additional-suits")
+const mainContainer = document.querySelector(".cctv-suites__suites")
+const additionalContainer = document.querySelector(".cctv-suites__additional-suites")
 const columnGap = getPropertyValue(mainContainer, "column-gap")
-const showMoreButton = mainContainer.parentElement.querySelector(".cctv-suits__show-more")
-const activeButtonClassName = "cctv-suits__show-more--active"
-const maxSuits = 9
+const showMoreButton = mainContainer.parentElement.querySelector(".cctv-suites__show-more")
+const activeButtonClassName = "cctv-suites__show-more--active"
+const maxSuites = 9
 const maxRows = 2
 const timeout = 1500
 const map = {
@@ -53,7 +53,7 @@ export function elementsToShow() {
 function fromMainToAdditional() {
    // console.log("fromMainToAdditional", mainContainer.children.length)
    const arr = []
-   for (let i = maxSuits + 1; i < mainContainer.children.length; i++) {
+   for (let i = maxSuites + 1; i < mainContainer.children.length; i++) {
       arr.push(mainContainer.children[i])
    }
    arr.forEach((el) => additionalContainer.append(el))
@@ -61,8 +61,8 @@ function fromMainToAdditional() {
 function fromAdditionalToMain() {
    // console.log("fromAdditionalToMain!")
    const arr = []
-   for (const suit of additionalContainer.children) {
-      arr.push(suit)
+   for (const suite of additionalContainer.children) {
+      arr.push(suite)
    }
    arr.forEach((el) => mainContainer.append(el))
 }
