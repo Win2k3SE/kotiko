@@ -1,6 +1,6 @@
 import Swiper, { Navigation, Pagination, Controller } from "swiper"
 
-function initSuitSlider(slide){
+function initSuitesSlider(slide){
    new Swiper(slide, {
       modules: [Navigation, Pagination, Controller],
       navigation: {
@@ -23,13 +23,13 @@ function initSuitSlider(slide){
    })
 }
 export function initSliders() {
-   document.querySelectorAll(".suit").forEach(
-      (suit) => {
+   document.querySelectorAll(".suite").forEach(
+      (suite) => {
          new LazyLoad({
-            container: suit,
-            elements_selector: '.suit__slider',
+            container: suite,
+            elements_selector: '.suite__slider',
             unobserve_entered: true,
-            callback_enter: () => initSuitSlider(suit.querySelector('.suit__slider'))
+            callback_enter: () => initSuitesSlider(suite.querySelector('.suite__slider'))
           });
       }
    )

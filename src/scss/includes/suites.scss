@@ -1,9 +1,9 @@
-.suits {
+.suites {
   @include avalue("margin-top", 150, 80);
-  // .suits__containter
+  // .suites__containter
   &__containter {
   }
-  // .suits__header
+  // .suites__header
   &__header {
     display: flex;
     justify-content: space-between;
@@ -18,7 +18,7 @@
       justify-content: center;
     }
   }
-  // .suits__title
+  // .suites__title
   &__title {
     margin-bottom: 0;
     flex: 0 0 33.3333%;
@@ -28,7 +28,7 @@
     flex-grow: 1;
   }
 
-  // .suits__body
+  // .suites__body
   &__body {
     display: grid;
     row-gap: rem(20);
