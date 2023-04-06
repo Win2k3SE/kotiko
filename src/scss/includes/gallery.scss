@@ -22,7 +22,7 @@
       column-gap: rem(30);
       overflow: hidden;
       @media (max-width: 870px) {
-         padding-right: 0;
+         margin-right: rem(-15);
          flex-direction: column;
          // width: calc(100% + rem(15));
       }

@@ -119,5 +119,11 @@
             margin-bottom: rem(20);
          }
       }
+      @media (max-width: 767.98px) {
+         padding: rem(15) rem(50) rem(15) rem(20);
+      }
+      @media (max-width: 480px) {
+         padding: rem(15) rem(45) rem(10) rem(15);
+      }
    }
 }
