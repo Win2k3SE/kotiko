@@ -4,8 +4,8 @@ function initSuitSlider(slide){
    new Swiper(slide, {
       modules: [Navigation, Pagination, Controller],
       navigation: {
-         nextEl: ".suit__slider .swiper-button-next",
-         prevEl: ".suit__slider .swiper-button-prev",
+         nextEl: slide.querySelector(".swiper-button-next"),
+         prevEl: slide.querySelector(".swiper-button-prev"),
       },
       loop: true,
       observer: true,
