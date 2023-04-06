@@ -78,7 +78,7 @@ body {
     [class*="-container"]*/ {
       @if ($maxWidthContainer > 0) {
          max-width: $maxWidthContainer + px;
-         box-sizing: content-box;
+         // box-sizing: content-box;
          margin: 0 auto;
       }
       @if ($containerPadding > 0) {
@@ -94,7 +94,7 @@ body {
       margin: 0 auto;
       @if ($maxWidthContainer > 0) {
          max-width: $maxWidthContainer;
-         box-sizing: content-box;
+         // box-sizing: content-box;
       } @else {
          @if ($containerPadding > 0) {
             padding: 0 math.div($container-padding, 2) + px;
