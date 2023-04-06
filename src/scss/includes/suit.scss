@@ -43,22 +43,34 @@
 
       .swiper-button-next,
       .swiper-button-prev {
-         content: "";
          position: absolute;
-         top: 50%;
-         width: rem(25);
-         height: rem(50);
+         width: rem(52);
+         top: 0;
+         height: 100%;
+         z-index: 10;
+         &::before {
+            content: "";
+            background: no-repeat var(--rightArrow);
+            position: absolute;
+            top: 50%;
+            height: rem(52);
+            width: 50%;
+         }
       }
       .swiper-button-next {
-         right: rem(8);
-         transform: translateY(-50%);
-         z-index: 10;
-         background-image: var(--rightArrow);
+         right: 0;
+         &::before {
+            right: 50%;
+            transform: translate(50%, -50%);
+         }
       }
       .swiper-button-prev {
-         background-image: var(--rightArrow);
-         left: rem(8);
-         transform: translateY(-50%) rotate(180deg);
+         left: 0;
+         &::before {
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(180deg);
+
+         }
       }
       .swiper-button-disabled {
          opacity: 0.4;
