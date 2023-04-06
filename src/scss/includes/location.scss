@@ -62,6 +62,10 @@
          margin-left: -15px;
          width: calc(100% + 30px);
       }
+      @media (max-width: 479.98px) {
+         margin-left: -10px;
+         width: calc(100% + 20px);
+      }
 
    }
    // .location__directions
