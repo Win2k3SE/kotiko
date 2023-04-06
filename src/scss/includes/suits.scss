@@ -33,7 +33,7 @@
     display: grid;
     row-gap: rem(20);
     @include avalue("column-gap", 30, 10);
-    grid-template: auto/ repeat(3, auto);
+    grid-template: auto/ repeat(3, 1fr);
     @media (max-width: $tablet + px) {
       grid-template:
         "left right"
