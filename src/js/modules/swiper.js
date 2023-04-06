@@ -23,12 +23,13 @@ function initSuitSlider(slide){
    })
 }
 export function initSliders() {
-   document.querySelectorAll(".suit__slider").forEach(
-      (slide) => {
+   document.querySelectorAll(".suit").forEach(
+      (suit) => {
          new LazyLoad({
+            container: suit,
             elements_selector: '.suit__slider',
             unobserve_entered: true,
-            callback_enter: () => initSuitSlider(slide)
+            callback_enter: () => initSuitSlider(suit.querySelector('.suit__slider'))
           });
       }
    )
