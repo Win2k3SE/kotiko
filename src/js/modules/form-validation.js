@@ -40,8 +40,8 @@ const rules = {
 }
 export function validate() {
    const forms = []
-   forms.push(document.querySelector(".main__form"))
-   forms.push(document.querySelector(".order-form__form"))
+   document.querySelectorAll(".main__form").forEach(el => forms.push(el))
+   document.querySelectorAll(".order-form__form").forEach(el => forms.push(el))
    forms.forEach((form) => {
       form.addEventListener("submit", (e) => {
          e.preventDefault()
