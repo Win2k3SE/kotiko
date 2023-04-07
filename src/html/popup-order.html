@@ -1,0 +1,77 @@
+<div class="order-popup">
+   <div class="popup-container">
+      <div class="order__form order-form">
+         <form action="#" method="post" class="order-form__form">
+             <div class="order-form__row order-form__row--two-inputs">
+                 <div class="order-form__column">
+                     <div class="form-field">
+                         <input type="text" name="client-name" class="form-input"
+                             data-min-length="2" placeholder="Имя *" aria-required="true">
+                     </div>
+                     <ul class="_error-list"></ul>
+                 </div>
+                 <div class="order-form__column">
+                     <div class="form-field">
+                         <input type="text" name="start-date"
+                             class="form-input order-form__start-date" placeholder="Дата заезда *"
+                             aria-required="true" spellcheck="false">
+                     </div>
+                     <ul class="_error-list"></ul>
+                 </div>
+             </div>
+             <div class="order-form__row order-form__row--two-inputs">
+                 <div class="order-form__column">
+                     <div class="form-field">
+                         <input type="tel" autocomplete="off" data-rule="tel" data-min-length="6"
+                             data-max-length="24" name="phone" class="form-input"
+                             aria-required="true" placeholder="Телефон *">
+                     </div>
+                     <ul class="_error-list"></ul>
+                 </div>
+                 <div class="order-form__column">
+                     <div class="form-field">
+                         <input type="text" name="end-date"
+                             class="form-input order-form__end-date"
+                             placeholder="Дата выезда" spellcheck="false">
+                     </div>
+                     <ul class="_error-list"></ul>
+                 </div>
+             </div>
+             <div class="order-form__row order-form__row--two-inputs">
+                 <div class="order-form__column">
+                     <div class="form-field">
+                         <input type="text" data-max-length="30" name="pet-name"
+                             class="form-input" placeholder="Кличка животного">
+                     </div>
+                     <ul class="_error-list"></ul>
+                 </div>
+                 <div class="order-form__column">
+                     <div class="form-field">
+                          <select name="suite-type" title="Тип номера" aria-required="true" class="form-input" id="suite-type">
+                                <option value="">Тип номера *</option>
+                                <option value="suite-1">Стандарт</option>
+                                <option value="suite-2">Стандарт+</option>
+                                <option value="suite-3">Люкс</option>
+                          </select>
+                       </div>
+                       <ul class="_error-list"></ul>
+                    </div>
+             </div>
+             <div class="order-form__row">
+                 <div class="order-form__column">
+                     <div class="form-field">
+                         <textarea name="comment" class="form-input order-form__comment"
+                             placeholder="Примечание"></textarea>
+                     </div>
+                     <ul class="_error-list"></ul>
+                 </div>
+             </div>
+             <div class="order-form__row order-form__row--button">
+                 <button type="submit" class="button order-form__button">Забронировать</button>
+             </div>
+         </form>
+     </div>
+   </div>
+   <button type="button" aria-label="Закрыть этот диалог" class="popup-close-button"></button>
+</div>
+<div class="popup-overlay"></div>

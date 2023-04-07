@@ -33,3 +33,6 @@ for(const el of document.querySelectorAll('[data-clipboard]')) {
       }, 400);
    })
 }
+
+import { orderPopup } from './modules/order-popup.js'
+orderPopup()
