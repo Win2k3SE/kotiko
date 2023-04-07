@@ -243,6 +243,9 @@ br.responsive {
       .choices__list--dropdown .choices__item, .choices__list[aria-expanded] .choices__item {
          font-size: inherit;
       }
+      .choices__item {
+         white-space: nowrap;
+      }
       .choices__item.choices__item--choice.is-selected.choices__item--selectable.is-highlighted {
          background-color: rgba($mainPink, .3);
       }
