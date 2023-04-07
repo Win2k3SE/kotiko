@@ -263,24 +263,3 @@
       border-color: $mainPink;
    }
 }
-.test-slider {
-   width: pc(1000, $maxWidthContainer);
-   border: 10px solid magenta;
-   margin: 30px auto;
-   overflow: hidden;
-   .swiper-wrapper {
-      display: flex;
-   }
-   .swiper-slide {
-      position: relative;
-      flex: 0 0 pc(1000, $maxWidthContainer);
-      padding-bottom: 20%;
-      img {
-         position: absolute;
-         top: 0;
-         left: 0;
-         width: 100%;
-         object-fit: cover;
-      }
-   }
-}
