@@ -1,4 +1,5 @@
 import Swiper, { Navigation, Pagination, Controller } from "swiper"
+import {debounce} from './functions.js'
 
 function initSuitesSlider(slide){
    new Swiper(slide, {
@@ -34,11 +35,14 @@ export function initSliders() {
       }
    )
    
+   const thumbsSliderSelector = ".thumbs-slider"
    const mainSliderSelector = ".main-slider"
    const mainSlider = document.querySelector(mainSliderSelector)
-   const thumbsSlider = document.querySelector(".thumbs-slider")
+   const thumbsSlider = document.querySelector(thumbsSliderSelector)
+   let thumbsOptions
+   let mainOptions
    if (mainSlider && thumbsSlider) {
-      const thumbsOptions =  {
+      thumbsOptions =  {
          modules: [Navigation, Pagination, Controller],
          loop: true,
          // loopedSlides: 2, // breaks things
@@ -60,17 +64,19 @@ export function initSliders() {
          },
          observer: true,
          observeParents: true,
+         resizeObserver: true,
+         updateOnWindowResize: true,
          on: {
             afterInit: (swiper) => {
                new LazyLoad({
                   container: swiper.el,
-                  elements_selector	: 'img',
+                  elements_selector	: '.swiper-lazy',
                   cancel_on_exit: false,
                });
             }
          }
       }
-      const mainOptions = {
+      mainOptions = {
          modules: [Navigation, Pagination, Controller],
          observer: true,
          observeParents: true,
@@ -100,12 +106,34 @@ export function initSliders() {
          elements_selector: mainSliderSelector,
          unobserve_entered: true,
          callback_enter: function (swiperElement) {
-            const thumbs = new Swiper(thumbsSlider, thumbsOptions)
-            let main = new Swiper(mainSlider, mainOptions)
+            callback()
+            window.addEventListener('resize', debounce(callback))
+
+         }
+       });
+   }
+   let thumbs
+   let main
+   let prevWidth  
+   function callback(){
+      if(window.innerWidth >= 870) {
+         if(!prevWidth || prevWidth < 870) {
+            thumbs = new Swiper(thumbsSlider, thumbsOptions)
+            if(!main) main = new Swiper(mainSlider, mainOptions)
             main.controller.control = thumbs
             thumbs.controller.control = main
          }
-       });
+      } else {
+         if(!prevWidth || prevWidth >= 870) {
+            if(thumbs) {
+               thumbs.destroy(true, true)
+               thumbs = undefined
+            }
+            if(!main) main = new Swiper(mainSlider, mainOptions)
+            main.controller.control = undefined
+         }
+      }
+      prevWidth = window.innerWidth
    }
    const header = document.querySelector(".gallery__header")
    const navigation = document.querySelector(".swiper-navigation")
