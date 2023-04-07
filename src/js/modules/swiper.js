@@ -96,7 +96,7 @@ export function initSliders() {
             afterInit: (swiper) => {
                new LazyLoad({
                   container: swiper.el,
-                  elements_selector	: 'img',
+                  elements_selector	: '.swiper-lazy',
                   cancel_on_exit: false,
                });
             }
