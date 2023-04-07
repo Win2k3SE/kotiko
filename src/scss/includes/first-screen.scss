@@ -354,16 +354,6 @@
       }
    }
 }
-.popup {
-   display: flex;
-   justify-content: flex-end;
-   &-container {
-      background-color: $mainYellow;
-      display: block;
-      padding: 20px 10px;
-      height: auto;
-   }
-}
 .fs-menu__burger{
    &-item {
       display: block;
@@ -405,33 +395,45 @@
       pointer-events: none;
    }
 }
-.popup-header {
-   display: flex; 
-   justify-content: flex-end;
-   width: 100%;
-   margin-top: 10px;
-}
-.popup-close-button {
-   width: 30px;
-   height: 30px;
-   margin-right: 30px;
-   position: relative;
-   cursor: pointer;
-   &::before, &::after {
-      content: "";
+.first-screen {
+   .popup {
+      display: flex;
+      justify-content: flex-end;
+      &-container {
+         background-color: $mainYellow;
+         display: block;
+         padding: 20px 10px;
+         height: auto;
+      }
+   }
+   .popup-header {
+      display: flex; 
+      justify-content: flex-end;
+      width: 100%;
+      margin-top: 10px;
+   }
+   .popup-close-button {
       width: 30px;
-      height: 2px;
-      background-color: $mainTextColor;
-      display: block;
-      transform-origin: center;
-      position: absolute;
-      top: 0;
-      left: 0;
-   }
-   &::before {
-      transform: translateY(50%) rotate(-45deg);
-   }
-   &::after  {
-      transform: translateY(50%) rotate(45deg);
+      height: 30px;
+      margin-right: 30px;
+      position: relative;
+      cursor: pointer;
+      &::before, &::after {
+         content: "";
+         width: 30px;
+         height: 2px;
+         background-color: $mainTextColor;
+         display: block;
+         transform-origin: center;
+         position: absolute;
+         top: 0;
+         left: 0;
+      }
+      &::before {
+         transform: translateY(50%) rotate(-45deg);
+      }
+      &::after  {
+         transform: translateY(50%) rotate(45deg);
+      }
    }
 }
