@@ -6,27 +6,6 @@
    display: grid;
    grid-template: "slider" "table" "button";
    align-items: start;
-   @media (max-width: $tablet + px) {
-      grid-area: center;
-      &:first-of-type {
-         grid-area: left;
-      }
-      &:nth-of-type(2) {
-         grid-area: right;
-      }
-      &:nth-of-type(3) > .suite {
-         grid-template:
-            "slider table" min-content
-            "slider button" 1fr / 1fr 1fr;
-         @include avalue("column-gap", 30, 10);
-      }
-   }
-   @media (max-width: 600 + px) {
-      &:last-of-type > .suite {
-         grid-template: "slider" "table" "button";
-         column-gap: rem(30);
-      }
-   }
    // .suite__slider
    &__slider {
       min-width: 0;

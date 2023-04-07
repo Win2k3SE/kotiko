@@ -109,6 +109,17 @@ th {
 .swiper-button-next, .swiper-button-prev {
    cursor: pointer;
 }
+.swiper-lazy {
+   transition: opacity .5s;
+   &:not(.loaded) {
+      opacity: 0;
+   }
+}
+body img.spinner {
+   @include size(80);
+   @include abs-center;
+   z-index: 0;
+}
 ._error-list {
    margin-top: rem(5);
    color: red;

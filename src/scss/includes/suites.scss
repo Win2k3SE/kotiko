@@ -11,7 +11,6 @@
     align-items: center;
     margin-bottom: rem(35);
     margin-bottom: 50px;
-
     @media (max-width: 600 + px) {
       flex-wrap: wrap;
       height: auto;
@@ -27,24 +26,11 @@
     @include flex-center;
     flex-grow: 1;
   }
-
   // .suites__body
   &__body {
     display: grid;
     row-gap: rem(20);
     @include avalue("column-gap", 30, 10);
-    grid-template: auto/ repeat(3, 1fr);
-    @media (max-width: $tablet + px) {
-      grid-template:
-        "left right"
-        "center center";
-    }
-    @media (max-width: 600 + px) {
-      grid-template: "left" "right" "center";
-    }
-    // @include avalue("gap", 30, 10);
-  }
-  &__column {
-    flex: 1 1 pc(380, $maxWidthContainer);
+    grid-template: auto / repeat(auto-fit, minmax(300px, 1fr));
   }
 }
