@@ -121,5 +121,53 @@
          width: 100%;
       }
    }
-
+}
+.order-popup {
+   position: fixed;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   max-width: 760px;
+   max-height: 90%;
+   z-index: 200;
+   display: none;
+   &.open {
+      display: flex;
+   }
+   &-container {
+      overflow: auto;
+   }
+   .order-form__form {
+      padding: 25px;
+   }
+   .order-form__row--button {
+      margin: 40px;
+      justify-content: center;
+   }
+   .popup-close-button {
+      position: absolute;
+      right: 0;
+      top: 0;
+      transform: translate(50%, -50%);
+      @include size(50);
+      border-radius: 50%;
+      border: 2px solid $mainYellow;
+      background-color: #000;
+      cursor: pointer;
+      &:before, &:after {
+         content: '';
+         width: 2px;
+         height: 80%;
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         background-color: $mainYellow;
+      }
+      &::before {
+         transform: translate(-50%, -50%) rotate(-45deg);
+      }
+      &::after {
+         transform: translate(-50%, -50%) rotate(45deg);
+      }
+   }
 }
