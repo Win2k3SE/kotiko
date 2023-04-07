@@ -39,7 +39,9 @@ const rules = {
    },
 }
 export function validate() {
-   const forms = document.querySelectorAll("form")
+   const forms = []
+   forms.push(document.querySelector(".main__form"))
+   forms.push(document.querySelector(".order-form__form"))
    forms.forEach((form) => {
       form.addEventListener("submit", (e) => {
          e.preventDefault()
