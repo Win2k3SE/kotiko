@@ -96,14 +96,13 @@
       }
       &--two-inputs {
          .order-form__column {
-            flex-basis: 45%;
+            flex-basis: calc(50% - rem(20));
             @media (max-width: 480px) {
                flex-basis: 100%;
             }
          }
          column-gap: rem(40);
-         @media (max-width: 609px) {
-         }
+         justify-content: space-between;
       }
       &--button {
          @include avalue("margin-top", 70, 50);
