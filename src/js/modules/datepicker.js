@@ -43,7 +43,7 @@ function initDatepicker(element) {
       .on("blur", onBlur)
       .on("change", function (e) {
          startDate = getDate(this)
-         console.log("startDate", startDate)
+         // console.log("startDate", startDate)
          to.datepicker("hide")
          setTimeout(() => to.datepicker("option", "minDate", startDate), 300)
       })
@@ -54,7 +54,7 @@ function initDatepicker(element) {
       .on("blur", onBlur)
       .on("change", function (e) {
          endDate = getDate(this)
-         console.log("endDate", endDate)
+         // console.log("endDate", endDate)
          if (endDate === null) {
             toEl.value = toElValue
          }
