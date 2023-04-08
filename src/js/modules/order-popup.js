@@ -36,7 +36,6 @@ export function orderPopup() {
       popupOverlay.classList.add('open')
    }
    document.addEventListener('click', e => {
-      console.log('e.target', e.target)
       if(e.target.closest('.swal2-confirm')) {
          closePopup()
       }
