@@ -12,7 +12,7 @@
       left: 0;
       height: 100%;
       width: 100%;
-      background: left bottom url(../../img/first-screen/oak-leave.svg) no-repeat;
+      background: left bottom url(@img/first-screen/oak-leave.svg) no-repeat;
       z-index: -5;
       @media (min-width: 1200px) {
          content: "";
@@ -24,7 +24,7 @@
       right: 0;
       height: 100%;
       width: 100%;
-      background: right bottom url(../../img/first-screen/leaves.svg) no-repeat;
+      background: right bottom url(@img/first-screen/leaves.svg) no-repeat;
       z-index: -5;
       @media (min-width: 1200px) {
          content: "";
@@ -57,7 +57,7 @@
    }
    // .first-screen__slogan
    &__slogan {
-      background: url(../../img/first-screen/stamp.svg) no-repeat;
+      background: url(@img/first-screen/stamp.svg) no-repeat;
       margin-top: rem(-47);
       width: rem(189);
       height: rem(189);

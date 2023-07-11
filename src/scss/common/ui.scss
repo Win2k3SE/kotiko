@@ -135,7 +135,7 @@ body img.spinner {
    }
 }
 .special-offer-text {
-   background: url("../../img/special-offer.svg") no-repeat;
+   background: url("@img/special-offer.svg") no-repeat;
    background-size: cover;
    @include flex-center;
    font-size: rem(20);

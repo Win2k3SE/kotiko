@@ -76,7 +76,7 @@
       &::before {
          content: "";
          @include abs-center;
-         background: no-repeat center url(../../img/partnership/partnership-paw.svg);
+         background: no-repeat center url(@img/partnership/partnership-paw.svg);
          width: rem(193);
          height: rem(157);
          opacity: 0.075;
