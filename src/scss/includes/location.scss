@@ -112,7 +112,7 @@
          width: 100%;
          height: rem(200);
          transform: translate(-50%, -50%);
-         background: no-repeat url(../../img/location/location-paw.svg);
+         background: no-repeat url(@img/location/location-paw.svg);
          @media (max-width: 1023px) {
             display: none;
          }

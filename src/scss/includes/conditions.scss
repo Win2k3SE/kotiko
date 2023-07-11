@@ -5,7 +5,7 @@
       position: relative;
       &::before {
          content: "";
-         background: 0 0 url(../../img/conditions/conditions-bg.svg) no-repeat;
+         background: 0 0 url(@img/conditions/conditions-bg.svg) no-repeat;
          position: absolute;
          top: rem(48);
          left: 3rem;

@@ -1,6 +1,6 @@
 .header {
   height: rem(189);
-  background: center rem(10) url(../../img/first-screen/clouds.svg) no-repeat;
+  background: center rem(10) url(@img/first-screen/clouds.svg) no-repeat;
   @media (max-width: 1000px) {
     height: auto;
   }
