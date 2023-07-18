@@ -18,13 +18,15 @@ export const html = () => {
                 )
             )
             .pipe(gfi())
-            // .pipe(app.plugins.if(app.isBuild, htmlmin({ collapseWhitespace: true })))
-            .pipe(htmlmin({ collapseWhitespace: true }))
+            .pipe(app.plugins.if(app.isHtmlmin, htmlmin({
+                collapseWhitespace: true,
+                removeComments: true 
+            })))
             .pipe(app.plugins.replace(/@img\//g, "img/"))
             .pipe(app.plugins.if(app.isWebpfy, webpfy()))
             .pipe(
                 app.plugins.if(
-                    app.isBuild,
+                    app.isVersionNumber,
                     versionNumber({
                         value: "%DT%",
                         append: {
