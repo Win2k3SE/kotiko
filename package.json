@@ -11,7 +11,7 @@
       "nosync": "gulp",
       "compile": "gulp compile",
       "build": "gulp build --build --webpfy --imagemin",
-      "opt": "gulp --build --webpfy --imagemin --gzip",
+      "opt": "gulp --build --webpfy --imagemin --htmlmin --cssmin --gzip",
       "zip": "gulp deployZip --build",
       "ftp": "gulp deployFtp --build"
    },

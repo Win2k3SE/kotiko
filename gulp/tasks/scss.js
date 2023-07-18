@@ -53,10 +53,10 @@ export const scss = () => {
             //       html: [`${app.path.build.html}index.html`],
             //    })
             // )
-            .pipe(app.plugins.if(app.isBuild, groupCssMediaQueries()))
+            .pipe(app.plugins.if(app.isWebpfy, groupCssMediaQueries()))
             .pipe(
                 app.plugins.if(
-                    app.isBuild,
+                    app.isWebpfy,
                     webpcss({
                         webpClass: ".webp",
                         noWebpClass: "",
@@ -65,7 +65,7 @@ export const scss = () => {
             )
             .pipe(
                 app.plugins.if(
-                    app.isBuild,
+                    app.isPrefixCss,
                     autoPrefixer({
                         grid: true,
                         overrideBrowerslist: ["last 3 versions"],
@@ -78,7 +78,7 @@ export const scss = () => {
             // .pipe(app.plugins.if(app.isBrowsersync, app.plugins.browsersync.stream()))
             // .pipe(filter("**/*.css"))
             .pipe(rename({ extname: ".min.css" }))
-            .pipe(app.plugins.if(app.isBuild, cleanCss()))
+            .pipe(app.plugins.if(app.isCssmin, cleanCss()))
             .pipe(sourceMaps.write("."))
             .pipe(app.gulp.dest(app.path.build.css))
             .pipe(app.plugins.if(app.isBrowsersync, app.plugins.browsersync.stream()))

@@ -6,12 +6,16 @@ global.app = {
    path: path,
    gulp: gulp,
    plugins: plugins,
-   isBuild: process.argv.includes("--build"),
-   isDev: !process.argv.includes("--build"),
+   isDev: process.argv.includes("--dev"),
    isBrowsersync: process.argv.includes("--browsersync"),
    isWebpfy: process.argv.includes("--webpfy"),
    isImagemin: process.argv.includes("--imagemin"),
+   isHtmlmin: process.argv.includes("--htmlmin"),
+   isCssmin: process.argv.includes("--cssmin"),
    isGzip: process.argv.includes("--gzip"),
+   isPrefixCss: process.argv.includes("--prefix-css"),
+   isVersionNumber: process.argv.includes("--version-number"),
+   isBuildFonts: process.argv.includes("--build-fonts"),
 }
 import { copy } from "./gulp/tasks/copy.js"
 import { resetEverything, resetPathChildren } from "./gulp/tasks/reset.js"
@@ -45,7 +49,7 @@ const processHtmlAfterScss = false
 
 const devFonts = copyFonts
 const buildFonts = gulp.series(copyOtf, otf2ttf, copyTtf, ttf2woff, fontsStyle)
-const fonts = app.isBuild ? buildFonts : devFonts
+const fonts = app.isBuildFonts ? buildFonts : devFonts
 const scssAndHtmlInParallel = gulp.series(
    fonts,
    gulp.parallel(copy, html, scss, js, images, video, data)
