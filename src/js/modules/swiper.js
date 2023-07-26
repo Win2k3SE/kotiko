@@ -11,7 +11,6 @@ function initSuitesSlider(slide){
       loop: true,
       observer: true,
       observeParents: true,
-      spaceBetween: 20,
       on: {
          afterInit: (swiper) => {
             new LazyLoad({
