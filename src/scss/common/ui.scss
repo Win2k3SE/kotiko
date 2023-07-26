@@ -87,6 +87,7 @@ th {
    border-style: solid;
    border-color: transparent transparent $mainTextColor;
    position: relative;
+   transition: border-color .3s;
    &:focus-within {
       border-color: $mainTextColor;
    }
@@ -200,6 +201,7 @@ br.responsive {
        @extend .button;
        min-width: 150px;
        padding: rem(10);
+       background-image: none;
        &:focus {
          box-shadow: none;
        }
