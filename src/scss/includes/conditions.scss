@@ -13,7 +13,7 @@
          height: rem(595);
          z-index: -1;
          @media (min-width: 1450px) {
-            left: pc(-97, $containerWidth);
+            left: pc(-97, $maxWidthContainer);
          }
          @media (max-width: 767px) {
             width: 75%;
