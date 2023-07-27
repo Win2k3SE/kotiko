@@ -30,23 +30,6 @@
     <script defer src="js/swiper.min.js"></script>
     <script defer src="js/datepicker.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/choices.js/10.2.0/choices.min.js"></script>
-    <script>
-      const selector = '.order [name="suite-type"]'
-      const els = document.querySelectorAll(selector)
-      for(const el of els) {
-         new LazyLoad({
-            elements_selector: selector,
-            unobserve_enered: true,
-            callback_enter: () =>{
-               new Choices(el, {
-                  searchEnabled: false,
-                  itemSelectText: "",
-                  shouldSort: false,
-                  allowHTML: false,
-               })
-            }})
-         }
-  </script>
 </body>
 
 </html>
