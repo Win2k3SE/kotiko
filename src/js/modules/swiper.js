@@ -101,15 +101,17 @@ export function initSliders() {
             }
          }
       }
-      new LazyLoad({
-         elements_selector: mainSliderSelector,
-         unobserve_entered: true,
-         callback_enter: function (swiperElement) {
-            callback()
-            window.addEventListener('resize', debounce(callback))
+    //   new LazyLoad({
+    //      elements_selector: mainSliderSelector,
+    //      unobserve_entered: true,
+    //      callback_enter: function (swiperElement) {
+    //         callback()
+    //         window.addEventListener('resize', debounce(callback))
 
-         }
-       });
+    //      }
+    //    });
+       callback()
+       window.addEventListener('resize', debounce(callback))
    }
    let thumbs
    let main
