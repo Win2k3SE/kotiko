@@ -201,7 +201,7 @@ br.responsive {
        @extend .button;
        min-width: 150px;
        padding: rem(10);
-       background-image: none;
+       background-image: none !important;
        &:focus {
          box-shadow: none;
        }
