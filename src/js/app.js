@@ -1,12 +1,11 @@
+import {isWebp } from "./modules/functions.js"
+isWebp()
+
 import {burger} from './modules/burger.js'
 burger()
 
 import { mask } from "./modules/inputmask.js"
 mask()
-
-import {isWebp } from "./modules/functions.js"
-
-isWebp()
 
 import { DynamicAdapt } from "./modules/dynamic-adapt.js"
 const da = new DynamicAdapt("max")
