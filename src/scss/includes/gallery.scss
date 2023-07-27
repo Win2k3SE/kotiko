@@ -63,7 +63,8 @@
       margin-top: rem(30);
       span {
         display: inline-block;
-        min-width: .5em;
+        min-width: .7em;
+        text-align: center;
       }
       @media (max-width: 870px) {
          margin: rem(20) auto rem(10);
