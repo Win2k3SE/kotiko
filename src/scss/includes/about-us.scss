@@ -7,7 +7,7 @@
          content: "";
          position: absolute;
          left: 3rem;
-         top: pc(71, $containerWidth);
+         top: pc(71, $maxWidthContainer);
          width: rem(417);
          height: rem(396);
          background: no-repeat url(@img/about-us/cat.svg);
@@ -24,7 +24,7 @@
             left: 0;
          }
          @media (min-width: 1350px) {
-            left: pc(-47, $containerWidth);
+            left: pc(-47, $maxWidthContainer);
          }
       }
    }
