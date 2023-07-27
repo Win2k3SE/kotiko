@@ -78,7 +78,7 @@
 .order-form {
    // .order-form__form
    &__form {
-      background-color: rgba($mainYellow, 0.95);
+      background-color: $mainYellow;
       @include avalue("padding-top", 60, 20);
       @include avalue("padding-right", 50, 10);
       @include avalue("padding-bottom", 60, 20);
@@ -127,17 +127,28 @@
    left: 50%;
    transform: translate(-50%, -50%);
    max-width: 760px;
+   width: 100%;
    max-height: 90%;
    z-index: 200;
    display: none;
+   @media (max-width: 600px) {
+      max-height: none;
+      height: 100%;
+   }
    &.open {
       display: flex;
    }
    &-container {
       overflow: auto;
    }
+   .popup-container {
+        width: 100%;
+   }
    .order-form__form {
       padding: 25px;
+      @media (max-width: 992px) {
+        padding-top: 60px;
+      }
    }
    .order-form__row--button {
       margin: 40px;
@@ -167,6 +178,16 @@
       }
       &::after {
          transform: translate(-50%, -50%) rotate(45deg);
+      }
+      @media (max-width: 992px) {
+        transform: translate(-50%, 25%);
+        background-color: transparent;
+        border-color: $mainGray;
+        border-width: 1px;
+        &:before, &:after {
+            background-color: $mainGray;
+            width: 1px;
+         }
       }
    }
 }
