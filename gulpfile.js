@@ -14,6 +14,8 @@ global.app = {
    isCssmin: process.argv.includes("--cssmin"),
    isGzip: process.argv.includes("--gzip"),
    isPrefixCss: process.argv.includes("--prefix-css"),
+   isCssMap: process.argv.includes("--css-map"),
+   isKeepUncompressedCss: process.argv.includes("--keep-uncompressed-css"),
    isVersionNumber: process.argv.includes("--version-number"),
    isBuildFonts: process.argv.includes("--build-fonts"),
 }

@@ -18,10 +18,6 @@ export const html = () => {
                 )
             )
             .pipe(gfi())
-            .pipe(app.plugins.if(app.isHtmlmin, htmlmin({
-                collapseWhitespace: true,
-                removeComments: true 
-            })))
             .pipe(app.plugins.replace(/@img\//g, "img/"))
             .pipe(app.plugins.if(app.isWebpfy, webpfy()))
             .pipe(
@@ -35,11 +31,15 @@ export const html = () => {
                             to: ["css", "js"],
                         },
                         // output: {
-                        //    file: "gulp/version.json",
-                        // },
-                    })
-                )
-            )
+                            //    file: "gulp/version.json",
+                            // },
+                        })
+                        )
+                    )
+            .pipe(app.plugins.if(app.isHtmlmin, htmlmin({
+                collapseWhitespace: true,
+                removeComments: true 
+            })))
             .pipe(app.gulp.dest(app.path.build.html))
             // .pipe(
             //    critical({
