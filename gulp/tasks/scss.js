@@ -73,13 +73,17 @@ export const scss = () => {
                     })
                 )
             )
-            .pipe(sourceMaps.write("."))
-            .pipe(app.gulp.dest(app.path.build.css))
+            // .pipe(sourceMaps.write("."))
+            .pipe(app.plugins.if(app.isKeepUncompressedCss && app.isCssMap, sourceMaps.write(".")))
+            .pipe(app.plugins.if(app.isKeepUncompressedCss, app.gulp.dest(app.path.build.css)))
             // .pipe(app.plugins.if(app.isBrowsersync, app.plugins.browsersync.stream()))
             // .pipe(filter("**/*.css"))
-            .pipe(rename({ extname: ".min.css" }))
+            .pipe(rename({
+                basename: "style",
+                extname: ".min.css"
+            }))
             .pipe(app.plugins.if(app.isCssmin, cleanCss()))
-            .pipe(sourceMaps.write("."))
+            .pipe(app.plugins.if(app.isCssMap, sourceMaps.write(".")))
             .pipe(app.gulp.dest(app.path.build.css))
             .pipe(app.plugins.if(app.isBrowsersync, app.plugins.browsersync.stream()))
             .pipe(app.plugins.if(app.isGzip, gzip()))
