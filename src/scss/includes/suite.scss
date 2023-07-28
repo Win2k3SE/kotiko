@@ -88,9 +88,10 @@
       margin: rem(20) rem(25) rem(30) rem(25);
       width: calc(100% - rem(25) * 2);
       @media (max-width: 400px) {
-         width: 100%;
-         margin-left: 0;
-         margin-right: 0;
+         width: 90%;
+         margin-left: auto;
+         margin-right: auto;
+         display: block;
       }
    }
 }
@@ -147,24 +148,33 @@
    // .props__name
    &__name {
       color: $mainGray;
-      padding-right: rem(35);
+      padding-right: 10px;
+      width: calc(50% - 10px);
       @media (max-width: 400px) {
          padding-bottom: rem(5);
+         padding-right: 0;
+         width: 100%;
       }
    }
-   // .props__suit-name
-   &__suit-name {
+   // .props__suite-name
+   &__suite-name {
       font-size: rem(20);
       line-height: math.div(28, 20);
       font-weight: 600;
       color: $mainPink;
       @media (max-width: 400px) {
          font-size: inherit;
-         font-weight: inherit;
+        //  font-weight: inherit;
+        padding-bottom: rem(13);
       }
    }
    // .props__value
    &__value {
+        vertical-align: bottom;
+        padding-left: 10px;
+        @media (max-width: 400px) {
+            padding-left: 0;
+        }
    }
    &__value-list {
       @media (max-width: 400px) {
