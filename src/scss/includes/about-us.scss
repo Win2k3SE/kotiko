@@ -23,6 +23,9 @@
             top: rem(-50);
             left: 0;
          }
+         @media (max-width: 320px) {
+            min-width: auto;
+         }
          @media (min-width: 1350px) {
             left: pc(-47, $maxWidthContainer);
          }

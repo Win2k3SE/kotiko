@@ -16,11 +16,17 @@
       height: auto;
       justify-content: center;
     }
+    @media (max-width: 480px) {
+        flex-direction: column;
+    }
   }
   // .suites__title
   &__title {
     margin-bottom: 0;
     flex: 0 0 33.3333%;
+    @media (max-width: 480px) {
+        flex: 0 0 100%;
+    }
   }
   &__special-offer {
     @include flex-center;

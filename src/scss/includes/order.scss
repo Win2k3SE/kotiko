@@ -2,19 +2,12 @@
    @include avalue("margin-top", 150, 100);
    // .order__container
    &__container {
-      @media (max-width: 480px) {
-         padding-left: 0;
-         padding-right: 0;
-      }
    }
    // .order__header
    &__header {
    }
    // .order__title
    &__title {
-      @media (max-width: 480px) {
-         text-align: center;
-      }
    }
    // .order__body
    &__body {
@@ -48,6 +41,7 @@
          left: -97px;
          width: pc(625, 547); // 547 - column width
          max-height: 100%;
+         height: auto;
          @media (max-width: 1400px) {
             left: 0;
             width: 100%;
@@ -60,6 +54,7 @@
          @media (max-width: 320px) {
             position: static;
             transform: none;
+            width: 100%;
          }
       }
    }
@@ -71,6 +66,10 @@
       @media (max-width: 992px) {
          flex: 0 0 100%;
       }
+      @media (max-width: 480px) {
+        width: calc(100% + 30px);
+        margin-left: -15px;
+      }
    }
    .form-field {
    }
@@ -79,6 +78,7 @@
    // .order-form__form
    &__form {
       background-color: $mainYellow;
+      background-color: rgba($mainYellow, 0.95);
       @include avalue("padding-top", 60, 20);
       @include avalue("padding-right", 50, 10);
       @include avalue("padding-bottom", 60, 20);
