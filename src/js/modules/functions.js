@@ -92,3 +92,34 @@ export function getOffsetFromTop(el) {
    if(!el) return 0
    return el.offsetTop + getOffsetFromTop(el.offsetParent)
 }
+export function loadScript(src, onLoadSuccessCallback, onLoadErrorCallback) {
+	if (!src) {
+		console.error("Error: missing src");
+		return;
+	}
+	// Check if the script is already loaded
+	if (document.querySelector('script[src="' + src + '"]')) {
+		// Script already loaded...
+		// console.info("Script Already Loaded. Skipping: ", src);
+		if(onLoadSuccessCallback) onLoadSuccessCallback();
+	} else {
+		// Script not already leaded; load script...
+		// Create script tag
+		const js = document.createElement('script');
+		js.src = src;
+		js.setAttribute("async", "");
+
+		// Setup success callback
+		if (onLoadSuccessCallback) {
+			js.onload = onLoadSuccessCallback;
+		}
+
+		// Setup error callback
+		if (onLoadErrorCallback) {
+			js.onerror = onLoadErrorCallback;
+		}
+
+		// Add the script tag to <head>
+		document.head.appendChild(js);
+	}
+};
