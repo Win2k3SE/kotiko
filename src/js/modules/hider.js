@@ -2,11 +2,11 @@ import { addElements } from "./flexbox-empty-elements-inserter.js"
 import { getPropertyValue, slideUp, slideDown } from "./functions.js"
 
 let hidden = null
-const mainContainer = document.querySelector(".cctv-suites__suites")
-const additionalContainer = document.querySelector(".cctv-suites__additional-suites")
+const mainContainer = document.querySelector(".cctv__main-suites")
+const additionalContainer = document.querySelector(".cctv__additional-suites")
 const columnGap = getPropertyValue(mainContainer, "column-gap")
-const showMoreButton = mainContainer.parentElement.querySelector(".cctv-suites__show-more")
-const activeButtonClassName = "cctv-suites__show-more--active"
+const showMoreButton = mainContainer.parentElement.querySelector(".cctv__show-more")
+const activeButtonClassName = "cctv__show-more--active"
 const maxSuites = 9
 const maxRows = 2
 const timeout = 1500

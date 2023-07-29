@@ -54,14 +54,14 @@
    &__suites {
    }
 }
-.cctv-suites {
+.cctv {
    display: flex;
    flex-direction: column;
    row-gap: rem(55);
    @media (max-width: 767px) {
       row-gap: rem(25);
    }
-   &__suites,
+   &__main-suites,
    &__additional-suites {
       display: grid;
       justify-content: space-between;
@@ -81,7 +81,7 @@
          grid-template-columns: repeat(3, rem(80));
       }
    }
-   &__suites {
+   &__main-suites {
       // margin-bottom: rem(25);
       max-width: calc(100% - 14px); // negative right offset of suite image
    }
@@ -141,7 +141,7 @@
       }
    }
    // .suit__image
-   &__image {
+   &__suit-image {
       position: absolute;
       right: rem(-14);
       bottom: 0;
