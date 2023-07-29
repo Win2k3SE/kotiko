@@ -4,7 +4,7 @@ export function isWebp() {
 export function getPropertyValue(el, prop) {
    return parseInt(getComputedStyle(el)[prop])
 }
-const spoilerIsOpenClassName = "_spoiler--open"
+const spoilerIsOpenClassName = "_spoiler-open"
 const spoilerIsSlidingClassName = "_spoiler--is-sliding"
 const spoilerIsSlidingUpClassName = `${spoilerIsSlidingClassName}-up`
 const spoilerIsSlidingDownClassName = `${spoilerIsSlidingClassName}-down`

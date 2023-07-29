@@ -1,4 +1,4 @@
-const spoilerOpenClassName = "_spoiler--open"
+const spoilerOpenClassName = "_spoiler-open"
 const spoilerIsSlidingClassName = "_spoiler--is-sliding"
 const spoilerIsInitClassName = "_spoiler--init"
 const DEFAULT_DURATION = 500
