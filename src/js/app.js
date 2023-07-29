@@ -14,22 +14,25 @@ da.init()
 import { hideAndToggle } from "./modules/hider-and-toggler.js"
 hideAndToggle()
 
-const selector = '.order [name="suite-type"]'
-const els = document.querySelectorAll(selector)
-for(const el of els) {
-    new LazyLoad({
-        elements_selector: selector,
-        unobserve_enered: true,
-        callback_enter: () =>{
-            new Choices(el, {
-            searchEnabled: false,
-            itemSelectText: "",
-            shouldSort: false,
-            allowHTML: false,
-            })
-        }
-    })
+function initChoices() {
+    const selector = '.order [name="suite-type"]'
+    const els = document.querySelectorAll(selector)
+    for(const el of els) {
+        new LazyLoad({
+            elements_selector: selector,
+            unobserve_enered: true,
+            callback_enter: () => {
+                    new Choices(el, {
+                    searchEnabled: false,
+                    itemSelectText: "",
+                    shouldSort: false,
+                    allowHTML: false,
+                })
+            }
+        })
+    }
 }
+initChoices()
 
 import { initSpoilers } from "./modules/spoiler.js"
 document.addEventListener("DOMContentLoaded", initSpoilers)
