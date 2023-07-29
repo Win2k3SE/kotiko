@@ -1,6 +1,17 @@
 import {isWebp } from "./modules/functions.js"
 isWebp()
 
+import { loadScript } from "./modules/functions.js";
+
+new LazyLoad({
+    elements_selector: ".order-form__form",
+    callback_enter: () => {
+        console.log('loading datepicker!')
+        loadScript('js/datepicker.min.js')
+    }
+})
+
+
 import {burger} from './modules/burger.js'
 burger()
 

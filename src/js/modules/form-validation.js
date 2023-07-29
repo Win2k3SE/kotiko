@@ -1,4 +1,5 @@
-import Swal from "sweetalert2"
+// import Swal from "sweetalert2"
+import { loadScript } from "./functions.js";
 
 const rules = {
    text: function (node) {
@@ -82,7 +83,7 @@ async function validateForm(form) {
       }
    }
    if(isFormValid) {
-      Swal.fire("Спасибо!", "Мы скоро свяжемся с вами", "success")
+      loadScript('https://cdn.jsdelivr.net/npm/sweetalert2@11', () => Swal.fire("Спасибо!", "Мы скоро свяжемся с вами", "success"))
    }
 }
 function isFieldValid(field) {
