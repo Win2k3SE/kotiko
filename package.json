@@ -53,7 +53,7 @@
       "webpack": "^5.70.0",
       "webpack-cli": "^5.0.1",
       "webpack-stream": "^7.0.0",
-      "webpfy": "file:C:\\Users\\zmv\\Documents\\html-projects\\_npm\\webpfy\\webpfy-1.0.0.tgz"
+      "webpfy": "github:win2k3se/webpfy"
    },
    "dependencies": {
       "swiper": "^8.4.7",
