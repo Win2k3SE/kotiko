@@ -79,5 +79,5 @@ gulp.task("scss", async function () {
 })
 
 import { testWebpfy } from "./gulp/tasks/testWebpfy.js"
-gulp.task("test", gulp.series(testWebpfy))
+gulp.task("testWebpfy", gulp.series(testWebpfy))
 gulp.task("js", js)
