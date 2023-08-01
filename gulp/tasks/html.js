@@ -19,7 +19,7 @@ export const html = () => {
             )
             .pipe(gfi())
             .pipe(app.plugins.replace(/@img\//g, "img/"))
-            .pipe(app.plugins.if(app.isWebpfy, webpfy({insertDefaultImage: false})))
+            .pipe(app.plugins.if(app.isWebpfy, webpfy({ insertDefaultImage: true })))
             .pipe(
                 app.plugins.if(
                     app.isVersionNumber,
