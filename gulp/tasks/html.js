@@ -31,14 +31,14 @@ export const html = () => {
                             to: ["css", "js"],
                         },
                         // output: {
-                            //    file: "gulp/version.json",
-                            // },
-                        })
-                        )
-                    )
+                        //    file: "gulp/version.json",
+                        // },
+                    })
+                )
+            )
             .pipe(app.plugins.if(app.isHtmlmin, htmlmin({
                 collapseWhitespace: true,
-                removeComments: true 
+                removeComments: true
             })))
             .pipe(app.gulp.dest(app.path.build.html))
             // .pipe(
