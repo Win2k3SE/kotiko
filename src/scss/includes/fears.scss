@@ -1,5 +1,6 @@
 .fears {
-   @include avalue("margin-top", 150, 100);
+   @include avalue("padding-top", 75, 50);
+   @include avalue("margin-top", 75, 50);
    // .fears__container
    &__container {
    }

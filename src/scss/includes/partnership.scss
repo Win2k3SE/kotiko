@@ -1,6 +1,8 @@
 .partnership {
-   @include avalue("margin-top", 150, 100);
-   @include avalue("margin-bottom", 150, 100);
+   @include avalue("padding-top", 75, 50);
+   @include avalue("margin-top", 75, 50);
+   @include avalue("padding-bottom", 75, 50);
+   @include avalue("margin-bottom", 75, 50);
    // .partnership__container
    &__container {
    }

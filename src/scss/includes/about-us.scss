@@ -1,5 +1,6 @@
 .about-us {
-   @include avalue("margin-top", 150, 100);
+   @include avalue("padding-top", 75, 50);
+   @include avalue("margin-top", 75, 50);
    // .about-us__container
    &__container {
       position: relative;

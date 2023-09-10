@@ -1,5 +1,6 @@
 .suites {
-  @include avalue("margin-top", 150, 80);
+  @include avalue("padding-top", 75, 40);
+  @include avalue("margin-top", 75, 40);
   // .suites__containter
   &__containter {
   }
