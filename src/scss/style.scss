@@ -44,12 +44,15 @@ body {
       @if ($maxWidthContainer > 0) {
          max-width: $maxWidthContainer + px;
          // box-sizing: content-box;
-         margin: 0 auto;
+         margin-left: auto;
+         margin-right: auto;
       }
       @if ($containerPadding > 0) {
-         padding: 0 math.div($containerPadding, 2) + px;
+         padding-left: math.div($containerPadding, 2) + px;
+         padding-right: math.div($containerPadding, 2) + px;
          @media (max-width: 479.98px) {
-            padding: 0 10px;
+            padding-left: 10px;
+            padding-right: 10px;
          }
       }
    }
