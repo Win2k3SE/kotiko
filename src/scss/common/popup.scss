@@ -13,9 +13,6 @@
     &--open {
         transform: translateX(-100%);
     }
-    &--is-fading-out {
-        animation: fadeOut 0.5s;
-    }
     &-header {
         position: relative;
         display: flex;

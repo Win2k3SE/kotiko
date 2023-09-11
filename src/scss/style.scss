@@ -17,13 +17,6 @@ $minWidth: 320;
 $maxWidth: 1920;
 $containerPadding: 30;
 $maxWidthContainer: 1200 + $containerPadding; 
-// 1 no breakpoins
-// 2 with breakpoints
-$responsiveType: 1;
-$pc: $maxWidthContainer + 12;
-$tablet: 991.98; // tablets, phones horizontally
-$phone: 767.98; // L phones
-$smallPhone: 479.98; // S phones
 
 html {
    scroll-behavior: smooth;
@@ -53,51 +46,20 @@ body {
       }
    }
 }
-@if ($responsiveType == 1) {
-   [class*="__container"]/*,
-    [class*="-container"]*/ {
-      @if ($maxWidthContainer > 0) {
-         max-width: $maxWidthContainer + px;
-         // box-sizing: content-box;
-         margin-left: auto;
-         margin-right: auto;
-      }
-      @if ($containerPadding > 0) {
-         padding-left: math.div($containerPadding, 2) + px;
-         padding-right: math.div($containerPadding, 2) + px;
-         @media (max-width: 479.98px) {
-            padding-left: 10px;
-            padding-right: 10px;
-         }
+[class*="__container"] {
+   max-width: $maxWidthContainer + px;
+   // box-sizing: content-box;
+   margin-left: auto;
+   margin-right: auto;
+   @if ($containerPadding > 0) {
+      padding-left: math.div($containerPadding, 2) + px;
+      padding-right: math.div($containerPadding, 2) + px;
+      @media (max-width: 479.98px) {
+         padding-left: 10px;
+         padding-right: 10px;
       }
    }
-} @else if ($responsiveType == 2) {
-   [class*="__container"],
-   [class*="-container"] {
-      margin: 0 auto;
-      @if ($maxWidthContainer > 0) {
-         max-width: $maxWidthContainer;
-         // box-sizing: content-box;
-      } @else {
-         @if ($containerPadding > 0) {
-            padding: 0 math.div($container-padding, 2) + px;
-         }
-      }
-      @media (max-width: $pc + px) {
-         max-width: 970px;
-      }
-      @media (max-width: $tablet + px) {
-         max-width: 750px;
-      }
-      @media (max-width: $phone + px) {
-         max-width: none;
-         @if ($containerPadding > 0 and $maxWidthContainer > 0) {
-            padding: 0 math.div($containerPadding, 2) + px;
-         }
-      }
-   }
-} @else {
-   @error "Unknown responsiveType: '" + $responsiveType + "'";
 }
+
 @import "common/*";
 @import "includes/*";

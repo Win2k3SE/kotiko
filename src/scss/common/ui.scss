@@ -163,21 +163,6 @@ body img.spinner {
       }
    }
 }
-.big-button {
-   padding: em(18, 18) em(26, 18);
-   font-size: rem(18);
-   line-height: math.div(25, 18);
-}
-
-@keyframes fadeIn {
-   0% {
-      opacity: 0;
-   }
-   100% {
-      opacity: 1;
-      // display: none;
-   }
-}
 
 br.responsive {
    display: none;
@@ -192,9 +177,7 @@ br.responsive {
    content: "";
    clear: both;
 }
-.rub:after {
-   content: "\u20BD";
-}
+
 .swal2-container {
    color: $mainTextColor !important;
    .swal2-styled.swal2-confirm {
